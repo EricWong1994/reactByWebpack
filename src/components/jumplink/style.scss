@@ -1,0 +1,9 @@
+.footer-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    >a {
+        color: #333;
+        text-decoration: none;
+    }
+}
