@@ -5,7 +5,9 @@ import Jumplink from '../../components/jumplink/index.js'
 import Search from '../search/index.jsx'
 import About from '../about/index.js'
 import Setting from '../setting/index.js'
-import './style.scss'
+// import './style.scss'
+// import css from './style.css';
+import './style.css';
 
 export default class Index extends React.Component {
     render() {

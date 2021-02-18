@@ -11,12 +11,49 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                // use: ['style-loader', 'css-loader']
+                exclude: /node_modules/,
+                use: [
+                    {
+                      loader: 'style-loader',
+                    },
+                    {
+                      loader: 'css-loader',
+                      options: {
+                        importLoaders: 1,
+                      }
+                    },
+                    {
+                      loader: 'postcss-loader'
+                    }
+                ]
             },
-            
+            // {
+            //     test: /\.css$/i,
+            //     use: [
+            //         "style-loader",
+            //         "css-loader",
+            //         {
+            //             loader: "postcss-loader",
+            //             options: {
+            //                 postcssOptions: {
+            //                     plugins: [
+            //                         [
+            //                             "postcss-preset-env",
+            //                             {
+            //                                 // Options
+            //                             },
+            //                         ],
+            //                     ],
+            //                 },
+            //             },
+            //         },
+            //     ]
+            //     //  use: ["style-loader", "css-loader", "postcss-loader"]
+            // },
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader']
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
             },
             {
                 test: /\.(png|gif|jpe?g)$/,

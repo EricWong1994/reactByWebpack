@@ -34,7 +34,12 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.4",
     "axios": "^0.19.0",
+    "postcss": "^8.2.6",
+    "postcss-loader": "^4.2.0",
+    "postcss-nested": "^5.0.3",
+    "precss": "^4.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
