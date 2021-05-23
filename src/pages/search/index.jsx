@@ -7,12 +7,22 @@ export default function Search () {
         inputEl.current.focus()
     };
 
+    // useEffect(() => {
+    //     document.title = `你点击了{count}次`;
+    // })
+    // const [count, setCount] = useState(0);
+
     useEffect(() => {
-        document.title = `你点击了{count}次`;
-    })
+      const id = setInterval(() => {
+        setCount(count + 1);
+        // setCount(count => count + 1);
+      }, 1000);
+      return () => clearInterval(id);
+    }, []);
 
     return (
         <div>
+            <h1>{count}</h1>;
              <form action='#'  className='input-kw-form'>
                         <input
                             className='input-kw'

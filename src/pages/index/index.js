@@ -9,7 +9,7 @@ import './style.scss'
 
 export default class Index extends React.Component {
     componentDidMount() {
-        console.lg('hello source-map !') // log 写成 lg
+        // console.lg('hello source-map !') // log 写成 lg
     }
 
     render() {
