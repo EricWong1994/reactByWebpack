@@ -1,14 +1,16 @@
 {
     "compact": false,
     "presets": [
-        [
-            "env",
-            {
-                "modules": false
-            }
-        ],
-        "stage-2",
-        "react"
-    ],
-    "plugins": ["transform-decorators-legacy"]
+        // [
+        //     "env",
+        //     {
+        //         "modules": false
+        //     }
+        // ],
+        // "stage-2",
+        // "react",
+        "@babel/preset-react",
+        "@babel/preset-env"
+    ]
+    // "plugins": ["transform-decorators-legacy"]
 }

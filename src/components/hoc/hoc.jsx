@@ -31,7 +31,7 @@ function hoc(ComponentClass) {
   };
 }
 
-@hoc
+// @hoc
 class ComponentClass extends React.Component {
   render() {
     const divStyle = {

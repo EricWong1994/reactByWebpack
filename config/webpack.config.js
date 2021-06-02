@@ -4,7 +4,8 @@ let {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
-let merge = require('webpack-merge');
+// let merge = require('webpack-merge');
+let {merge} = require('webpack-merge');
 let productionConfig = require('./webpack.prod.conf');
 let developmentConfig = require('./webpack.dev.conf');
 let moduleConfig = require('./webpack.module.conf');
