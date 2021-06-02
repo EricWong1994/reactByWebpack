@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Menu from '../../components/menu/index.js'
-import Test from '../../components/test/index.jsx';
+import Test from '../../components/hoc/hoc.jsx';
 
 export default class About extends React.Component {
     render() {
