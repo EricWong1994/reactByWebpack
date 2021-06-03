@@ -11,6 +11,12 @@
         // "react",
         "@babel/preset-react",
         "@babel/preset-env"
+        // [
+        //     "@babel/preset-env",
+        //     {
+        //         "useBuiltIns": "entry"
+        //     }
+        // ]
     ]
     // "plugins": ["transform-decorators-legacy"]
 }
