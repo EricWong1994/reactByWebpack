@@ -1,11 +1,9 @@
-import * as Server  from './apis/index.js'
-import RouterMain from './router/index.js'
-import React from 'react'
-import ReactDOM from 'react-dom'
+// import createHeading from './heading.js'
 
-process.env.NODE_ENV === 'development' && require('../mock/index.js')
+// const heading = createHeading()
 
-ReactDOM.render(
-    <RouterMain></RouterMain>,
-    document.querySelector('#app')
-)
+// document.body.append(heading)
+
+import about from './about.md'
+
+console.log(about)

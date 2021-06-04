@@ -1,43 +1,29 @@
 {
-  "name": "webpack",
+  "name": "reactByWebpack",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "css-loader": "^5.2.6",
+    "html-loader": "^0.5.5",
+    "marked": "^2.0.7",
+    "style-loader": "^2.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --env production --config config/webpack.config.js ",
-    "dev": "webpack-dev-server --env development --config config/webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricWong1994/reactByWebpack.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-component": "^1.1.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.0.4",
-    "css-loader": "^3.1.0",
-    "file-loader": "^4.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mockjs": "^1.0.1-beta3",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "url-loader": "^2.1.0",
-    "webpack": "^4.38.0",
-    "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2",
-    "webpack-merge": "^4.2.1"
+  "bugs": {
+    "url": "https://github.com/EricWong1994/reactByWebpack/issues"
   },
-  "dependencies": {
-    "axios": "^0.19.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "swiper": "^4.5.0"
-  }
+  "homepage": "https://github.com/EricWong1994/reactByWebpack#readme"
 }
