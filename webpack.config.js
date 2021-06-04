@@ -1,4 +1,7 @@
 const path = require('path')
+const HtmlWebpackPlugin  = require('html-webpack-plugin')
+const {CleanWebpackPlugin}  = require('clean-webpack-plugin')
+const RemoveCommentsPlugin = require('./remove-comments-plugins')
 // ./webpack.config.js
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -22,6 +25,21 @@ module.exports = {
         use: ['html-loader', './markdown-loader']
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Webpack Plugin Sample111',
+      // meta: {
+      //   viewport: 'width=device-width'
+      // }
+      template: './src/index.html'
+    }),
+    new RemoveCommentsPlugin()
+    // 用于生成 about.html
+    // new HtmlWebpackPlugin({
+    //   filename: 'about.html'
+    // })
+  ]
   // loader:
 }

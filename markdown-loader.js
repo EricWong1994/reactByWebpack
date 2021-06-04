@@ -1,7 +1,7 @@
 const marked = require('marked');
 
 module.exports = source => {
-    console.log('source', source);
+    // console.log('source', source);
     // return 'hello loader ~'
     // return 'console.log("hello loader ~")'
 
