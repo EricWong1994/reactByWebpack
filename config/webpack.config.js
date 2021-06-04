@@ -9,6 +9,7 @@ let productionConfig = require('./webpack.prod.conf');
 let developmentConfig = require('./webpack.dev.conf');
 let moduleConfig = require('./webpack.module.conf');
 
+/** @type {import('webpack').Configuration} */
 let defaultConfig = {
     entry: {
         app: './src/main.js'
@@ -26,6 +27,7 @@ let defaultConfig = {
             inject: true
         })
     ],
+    // loader
 }
 module.exports = env => {
     let config = env === 'production'?productionConfig:developmentConfig;
