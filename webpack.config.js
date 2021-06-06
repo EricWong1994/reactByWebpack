@@ -25,6 +25,15 @@ module.exports = {
         test: /\.md$/,
         // use: './markdown-loader'
         use: ['html-loader', './markdown-loader']
+      },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   },
@@ -62,11 +71,15 @@ module.exports = {
   ],
   devServer: {
     // contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, './src'),
     // contentBase: path.join(__dirname, './aaa'),
-    compress: true,
+    // compress: true,
     port: 9000,
+    hot: true,
     // host: 'dev.lemon.baidu.com',
     open: true
-  }
-  // loader:
+  },
+  // devtool: 'source-map'
+  // devtool: 'eval'
+  devtool: 'eval-source-map'
 }
