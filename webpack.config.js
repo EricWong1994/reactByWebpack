@@ -81,5 +81,13 @@ module.exports = {
   },
   // devtool: 'source-map'
   // devtool: 'eval'
-  devtool: 'eval-source-map'
+  // devtool: 'eval-source-map',
+  optimization: {
+     // 模块只导出被使用的成员
+     usedExports: true,
+     // 尽可能合并每一个模块到一个函数中
+     concatenateModules: false,
+     // 压缩输出结果
+     minimize: false // 默认true
+  }
 }
