@@ -10,4 +10,5 @@
         "stage-2",
         "react"
     ]
+    // "exclude": "/node_modules/"
 }

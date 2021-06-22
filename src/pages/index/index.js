@@ -5,6 +5,7 @@ import Jumplink from '../../components/jumplink/index.js'
 import Search from '../search/index.jsx'
 import About from '../about/index.js'
 import Setting from '../setting/index.js'
+import AntdPractice from '../antd/index'
 import './style.scss'
 
 export default class Index extends React.Component {
@@ -25,6 +26,10 @@ export default class Index extends React.Component {
             {
                 path: '/index/setting',
                 title: '设置'
+            },
+            {
+                path: '/index/antd',
+                title: 'antd'
             }
         ]
         return <div className="main-container">
@@ -34,6 +39,7 @@ export default class Index extends React.Component {
                         <Route path="/index/search" component={Search}></Route>
                         <Route path="/index/about" component={About}></Route>
                         <Route path="/index/setting" component={Setting}></Route>
+                        <Route path="/index/antd" component={AntdPractice}></Route>
                     {/* </Switch>
                 </Router> */}
             </div>
