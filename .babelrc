@@ -1,14 +1,15 @@
 {
     "compact": false,
-    "presets": [
-        [
-            "env",
-            {
-                "modules": false
-            }
-        ],
-        "stage-2",
-        "react"
-    ]
+    "presets": ["@babel/preset-react"]
+    // "presets": [
+    //     [
+    //         "env",
+    //         {
+    //             "modules": false
+    //         }
+    //     ],
+    //     "stage-2",
+    //     "react"
+    // ]
     // "exclude": "/node_modules/"
 }
