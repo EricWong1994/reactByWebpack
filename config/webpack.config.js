@@ -27,7 +27,13 @@ let defaultConfig = {
             inject: true
         })
     ],
-    // loader
+    resolve: {
+        alias: {
+            '@components': path.resolve(__dirname, '../', 'src/components'),
+            // '@': path.resolve('../', 'src/components')
+        },
+        extensions:['.js','.jsx','.json']  // 表示这几个文件的后缀名可以省略不写
+    }
 }
 module.exports = env => {
     let config = env === 'production'?productionConfig:developmentConfig;
