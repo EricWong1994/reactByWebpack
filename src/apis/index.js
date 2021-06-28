@@ -12,7 +12,6 @@ var env = process.env.NODE_ENV;
 
 // if(env === 'production') {
 if (env === 'development') {
-    console.log(env);
     Axios.defaults.baseURL = 'http://localhost:3000'
     // Axios.defaults.baseURL = 'http://39.106.162.247:3000'
     Axios.interceptors.response.use(

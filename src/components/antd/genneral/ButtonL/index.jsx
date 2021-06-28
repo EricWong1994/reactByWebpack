@@ -4,7 +4,7 @@ export default function ButtonL() {
     return (
         <div>
             ButtonL
-            {/* <Button/> */}
+            <Button/>
         </div>
     )
 }
