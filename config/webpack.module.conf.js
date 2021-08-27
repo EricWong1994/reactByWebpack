@@ -1,3 +1,5 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 module.exports = {
     module:{
         rules: [
@@ -7,16 +9,18 @@ module.exports = {
                     {
                         loader: 'babel-loader'
                     }
-                ]
+                ],
+                exclude: /node_modules/
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                // use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'] // 采用link的方式引入样式
             },
             
             {
                 test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
                 test: /\.less$/,

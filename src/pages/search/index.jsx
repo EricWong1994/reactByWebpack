@@ -1,4 +1,6 @@
 import React,{useState,useEffect,useRef} from 'react';
+import Menu from 'menu';
+import './index.css';
 
 export default function Search () {
     const [count,setCount] = useState(0);
@@ -25,9 +27,12 @@ export default function Search () {
                         />
                 </form>
             <p>点击了{count}次</p>
+            <Menu>
+                测试Menu
+            </Menu>
             <div>
                 <button onClick={() => setCount(count + 1)}>
-                    点我
+                    点我1
                 </button>
             </div>
             <input ref={inputEl} type="text"/>
