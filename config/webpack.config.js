@@ -7,7 +7,7 @@ let merge = require('webpack-merge');
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssPlugin = require('optimize-css-assets-webpack-plugin');
-
+const { DuplicatesPlugin } = require("inspectpack/plugin");
 // const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 // const smp = new SpeedMeasurePlugin();
 let productionConfig = require('./webpack.prod.conf');
@@ -34,7 +34,26 @@ let defaultConfig = {
         }),
         new DashboardPlugin(), // 打包分析
         new MiniCssExtractPlugin(), // css抽离
-        new OptimizeCssPlugin() // css代码压缩
+        new OptimizeCssPlugin(), // css代码压缩
+        new DuplicatesPlugin({
+            verbose: true
+        })
+        // new DuplicatesPlugin({
+        //     // Emit compilation warning or error? (Default: `false`)
+        //     emitErrors: false,
+        //     // Handle all messages with handler function (`(report: string)`)
+        //     // Overrides `emitErrors` output.
+        //     emitHandler: undefined,
+        //     // List of packages that can be ignored. (Default: `[]`)
+        //     // - If a string, then a prefix match of `{$name}/` for each module.
+        //     // - If a regex, then `.test(pattern)` which means you should add slashes
+        //     //   where appropriate.
+        //     //
+        //     // **Note**: Uses posix paths for all matching (e.g., on windows `/` not `\`).
+        //     ignoredPackages: undefined,
+        //     // Display full duplicates information? (Default: `false`)
+        //     verbose: false
+        // })
         // new DashboardPlugin({port: 9090})
     ],
     resolve: {

@@ -16,6 +16,7 @@ module.exports = {
                 test: /\.css$/,
                 // use: ['style-loader', 'css-loader'],
                 use: [MiniCssExtractPlugin.loader, 'css-loader'] // 采用link的方式引入样式
+                // exclude: /node_modules/, // antd按需加载后，删去该行
             },
             
             {

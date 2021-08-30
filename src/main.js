@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import * as Server  from './apis/index.js'
 import RouterMain from './router/index.js'
 // import 'antd/dist/antd.css';
-import 'antd/dist/antd.less';
+// import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 
 process.env.NODE_ENV === 'development' && require('../mock/index.js')
 
