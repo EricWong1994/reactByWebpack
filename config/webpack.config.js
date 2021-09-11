@@ -64,7 +64,7 @@ let defaultConfig = {
             '@components': path.resolve(__dirname, '../', 'src/components'),
             // '@': path.resolve('../', 'src/components')
         },
-        extensions:['.js','.jsx','.json']  // 表示这几个文件的后缀名可以省略不写
+        extensions:['.js', '.jsx', '.json', '.tsx']  // 表示这几个文件的后缀名可以省略不写
     },
     optimization: {
         // mergeDuplicateChunks: true // 默认为true

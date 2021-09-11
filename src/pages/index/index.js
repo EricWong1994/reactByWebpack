@@ -6,14 +6,15 @@ import Search from '../search/index.jsx'
 import About from '../about/index.js'
 import Setting from '../setting/index.js'
 import AntdPractice from '../antd/index'
+import Home from './home/index';
 import './style.scss'
 
 export default class Index extends React.Component {
     render() {
         let routerdata = [
             {
-                path: '/index',
-                title: '首页'
+                path: '/index/home',
+                title: 'home'
             },
             {
                 path: '/index/search',
@@ -34,8 +35,10 @@ export default class Index extends React.Component {
         ]
         return <div className="main-container">
             <div className="main-container-body">
+                
                 {/* <Router>
                     <Switch> */}
+                        <Route path="/index/home" component={Home}></Route>
                         <Route path="/index/search" component={Search}></Route>
                         <Route path="/index/about" component={About}></Route>
                         <Route path="/index/setting" component={Setting}></Route>
@@ -44,7 +47,7 @@ export default class Index extends React.Component {
                 </Router> */}
             </div>
             <footer>
-                <Jumplink routerdata={routerdata}>1111</Jumplink>
+                <Jumplink routerdata={routerdata} />
             </footer>
         </div>
     }
