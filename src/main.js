@@ -23,5 +23,6 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js')
 // import GridTest from '@components/antd/layout/Grid';
 // import LayoutTest from '@components/antd/layout/Layout';
 
-// import Redirect from '@components/routerdemo/redirect01';
-require('@components/routerdemo/redirect01.js');
+// import Redirect from '@components/routerdemo/redirect';
+// require('@components/routerdemo/redirect.js');
+require('@components/routerdemo/index.js');
