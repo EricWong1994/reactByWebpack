@@ -14,27 +14,83 @@ import {
 import { createBrowserHistory, createHashHistory } from 'history';
 import ReactDOM from 'react-dom';
 
+const Today = function () {
+	const location = useLocation();
+	const history = useHistory();
+	console.log('Today-location: ', location);
+	console.log('Today-history: ', history);
+
+	return <h3>today</h3>;
+};
+const Courses = function () {
+	const location = useLocation();
+	const history = useHistory();
+	console.log('Courses-location: ', location);
+	console.log('Courses-history: ', history);
+
+	return <h3>Courses</h3>;
+};
 const routes = (
 	<Switch>
 		<Route path='/today'>
-			<h3>today</h3>
+			<Today></Today>
 		</Route>
 		<Route path='/tomorrow'>
 			<h3>tomorrow</h3>
 		</Route>
+		<Route path='/courses'>
+			<Courses></Courses>
+		</Route>
+		{/* <Redirect to='/today' /> */}
 	</Switch>
 );
+const testCallback = () => {
+	console.log('testCallback');
+};
+const getConfirmation = (message, callback) => {
+	// const allowTransition = window.confirm(message);
+	// callback(allowTransition);
+};
+
 function BrowserRouterDemo() {
 	return (
 		<div style={{ display: 'flex', justifyContent: 'center' }}>
 			<div>
-				<BrowserRouter basename='/calendar'>
+				<BrowserRouter
+					basename='/calendar'
+					getUserConfirmation={getConfirmation(
+						'Are you sure?',
+						testCallback
+					)}
+				>
 					{/* <Link to='/today' />  不要用单标签 */}
 					<div>
-						<Link to='/today'>today</Link>
+						<Link
+							to={{
+								pathname: '/today',
+								search: '?sort=name',
+								hash: '#ttt',
+								state: { price: 18 },
+							}}
+						>
+							today
+						</Link>
 					</div>
 					<div>
-						<Link to='/tomorrow'>tomorrow</Link>
+						{/* <Link to='/tomorrow'>tomorrow</Link> */}
+						<Link
+							to={location => ({
+								...location,
+								pathname: '/tomorrow',
+							})}
+						>
+							tomorrow
+						</Link>
+					</div>
+					<div>
+						<Link to='/courses' replace>
+							courses
+						</Link>
 					</div>
 					{/* // renders <a href="/calendar/today"> */}
 					{/* // renders <a href="/calendar/tomorrow"> */}
