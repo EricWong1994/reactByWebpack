@@ -10,6 +10,7 @@ import {
 	Link,
 	useLocation,
 	useParams,
+	NavLink,
 } from 'react-router-dom';
 import { createBrowserHistory, createHashHistory } from 'history';
 import ReactDOM from 'react-dom';
@@ -30,8 +31,13 @@ const Courses = function () {
 
 	return <h3>Courses</h3>;
 };
+const CoursesCom = function () {
+	return <h3>CoursesCom</h3>;
+};
+
 const routes = (
 	<Switch>
+		<Route path='/'>home</Route>
 		<Route path='/today'>
 			<Today></Today>
 		</Route>
@@ -41,7 +47,9 @@ const routes = (
 		<Route path='/courses'>
 			<Courses></Courses>
 		</Route>
-		{/* <Redirect to='/today' /> */}
+		{/* <Route>others</Route> */}
+		{/* <Route>others</Route> */}
+		<Redirect to='/tomorrow' />
 	</Switch>
 );
 const testCallback = () => {
@@ -88,10 +96,18 @@ function BrowserRouterDemo() {
 						</Link>
 					</div>
 					<div>
-						<Link to='/courses' replace>
-							courses
-						</Link>
+						<Link
+							to='/courses'
+							replace
+							component={CoursesCom}
+						></Link>
 					</div>
+					<div>
+						<NavLink to='/navlink' activeClassName='selected'>
+							navlink
+						</NavLink>
+					</div>
+					<div>-----------分割线-----------</div>
 					{/* // renders <a href="/calendar/today"> */}
 					{/* // renders <a href="/calendar/tomorrow"> */}
 					...
