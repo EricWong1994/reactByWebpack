@@ -8,6 +8,7 @@ let merge = require('webpack-merge');
 let productionConfig = require('./webpack.prod.conf');
 let developmentConfig = require('./webpack.dev.conf');
 let moduleConfig = require('./webpack.module.conf');
+const pxtorem = require('postcss-pxtorem');
 
 let defaultConfig = {
     entry: {
@@ -25,6 +26,12 @@ let defaultConfig = {
             template: 'index.html',
             inject: true
         })
+        // pxtorem({
+        //     rootValue: 75,
+        //     // propList: ['*'],
+        //     selectorBlackList:
+        //      ['van-circle__layer']
+        // })
     ],
 }
 module.exports = env => {

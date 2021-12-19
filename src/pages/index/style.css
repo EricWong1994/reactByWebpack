@@ -16,10 +16,17 @@
 
 div {
     flex: 1;
-    background-color: #f00;
+    background-color: #ccc;
 }
 footer {
     width: 100%;
     line-height: 60px;
     display: flex;
+}
+body {
+    margin: 0;
+}
+.pxtorem {
+    font-size: 1rem;
+    /* font-size: 75px; */
 }

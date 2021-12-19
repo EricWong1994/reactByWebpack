@@ -29,19 +29,24 @@ export default class Index extends React.Component {
                 title: '设置'
             }
         ]
-        return <div className="main-container">
-            <div className="main-container-body">
-                {/* <Router>
+        return (
+			<div className='main-container'>
+				<div className='main-container-body'>
+					<div className='pxtorem'>
+						设置设置设置设置设置设置postcss
+					</div>
+					{/* <Router>
                     <Switch> */}
-                        <Route path="/index/search" component={Search}></Route>
-                        <Route path="/index/about" component={About}></Route>
-                        <Route path="/index/setting" component={Setting}></Route>
-                    {/* </Switch>
+					<Route path='/index/search' component={Search}></Route>
+					<Route path='/index/about' component={About}></Route>
+					<Route path='/index/setting' component={Setting}></Route>
+					{/* </Switch>
                 </Router> */}
-            </div>
-            <footer>
-                <Jumplink routerdata={routerdata}>1111</Jumplink>
-            </footer>
-        </div>
+				</div>
+				<footer>
+					<Jumplink routerdata={routerdata}>1111</Jumplink>
+				</footer>
+			</div>
+		);
     }
 }
