@@ -5,35 +5,40 @@ import Jumplink from '../../components/jumplink/index.js'
 import Search from '../search/index.jsx'
 import About from '../about/index.js'
 import Setting from '../setting/index.js'
-// import './style.scss'
+import './style.scss';
 // import css from './style.css';
-import './style.css';
+// import './style.css';
 
 export default class Index extends React.Component {
-    render() {
-        let routerdata = [
-            {
-                path: '/index',
-                title: '首页'
-            },
-            {
-                path: '/index/search',
-                title: '搜索'
-            },
-            {
-                path: '/index/about',
-                title: '关于'
-            },
-            {
-                path: '/index/setting',
-                title: '设置'
-            }
-        ]
-        return (
+	render() {
+		let routerdata = [
+			{
+				path: '/index',
+				title: '首页',
+			},
+			{
+				path: '/index/search',
+				title: '搜索',
+			},
+			{
+				path: '/index/about',
+				title: '关于',
+			},
+			{
+				path: '/index/setting',
+				title: '设置',
+			},
+		];
+		return (
 			<div className='main-container'>
 				<div className='main-container-body'>
+					<div className='autoprefixer'>
+						autoprefixer
+						<div className='image'>image</div>
+					</div>
 					<div className='pxtorem'>
 						设置设置设置设置设置设置postcss
+						<input placeholder='我是红色的！' />
 					</div>
 					{/* <Router>
                     <Switch> */}
@@ -48,5 +53,5 @@ export default class Index extends React.Component {
 				</footer>
 			</div>
 		);
-    }
+	}
 }
