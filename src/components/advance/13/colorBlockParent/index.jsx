@@ -110,7 +110,7 @@ class Index extends React.Component {
 	render() {
 		return (
 			<div className='bigData_index' ref={this.box}>
-				{this.state.renderList}
+				{/* {this.state.renderList} */}
 			</div>
 		);
 	}
