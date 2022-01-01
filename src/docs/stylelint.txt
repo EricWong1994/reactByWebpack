@@ -1,0 +1,10 @@
+https://stylelint.io/
+https://stylelint.io/user-guide/configure/#rules
+
+https://stylelint.io/user-guide/rules/list/color-hex-case/
+
+https://github.com/stylelint/stylelint/blob/main/docs/user-guide/rules/about.md
+
+https://juejin.cn/post/7026998283155275807
+
+https://www.cnblogs.com/jiaoshou/p/12220999.html

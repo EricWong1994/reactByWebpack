@@ -1,3 +1,8 @@
 {
-   "editor.formatOnSave": true
+   "editor.formatOnSave": true,
+   "stylelint.enable": true,
+   "css.validate": false,
+   "scss.validate": false,
+   "less.validate": false,
+   "stylelint.autoFixOnSave":  true,
 }
