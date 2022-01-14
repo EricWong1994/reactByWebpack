@@ -1,2 +1,2 @@
 # reactByWebpack
-用webpack搭建的react项目（用于练习）
+A project based on React、Webpack just for practice
