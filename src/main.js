@@ -23,4 +23,7 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // import Lazy from '@components/advance/lazy';
 
 // 13
-import ColorBlockParent from '@components/advance/13/colorBlockParent';
+// import ColorBlockParent from '@components/advance/13/colorBlockParent';
+
+// 14 antd 源码构建流程
+import ButtonL from '@components/antd/genneral/ButtonL/index';

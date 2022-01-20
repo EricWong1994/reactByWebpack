@@ -18,58 +18,65 @@ const NODE_ENV = process.env.NODE_ENV;
 
 /** @type {import('webpack').Configuration} */
 let defaultConfig = {
-    entry: {
-        app: './src/main.js'
-    },
-    output: {
-        path: path.join(__dirname, '../', 'dist'),
-        filename: NODE_ENV === 'production' ? '[name].[contenthash:10].js' : '[name].[hash:10].js',
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
-            inject: true
-        }),
-        new DashboardPlugin(), // 打包分析
-        new MiniCssExtractPlugin(), // css抽离
-        new OptimizeCssPlugin(), // css代码压缩
-        new DuplicatesPlugin({
-            verbose: true
-        })
-        // new DuplicatesPlugin({
-        //     // Emit compilation warning or error? (Default: `false`)
-        //     emitErrors: false,
-        //     // Handle all messages with handler function (`(report: string)`)
-        //     // Overrides `emitErrors` output.
-        //     emitHandler: undefined,
-        //     // List of packages that can be ignored. (Default: `[]`)
-        //     // - If a string, then a prefix match of `{$name}/` for each module.
-        //     // - If a regex, then `.test(pattern)` which means you should add slashes
-        //     //   where appropriate.
-        //     //
-        //     // **Note**: Uses posix paths for all matching (e.g., on windows `/` not `\`).
-        //     ignoredPackages: undefined,
-        //     // Display full duplicates information? (Default: `false`)
-        //     verbose: false
-        // })
-        // new DashboardPlugin({port: 9090})
-    ],
-    resolve: {
-        // modules: ['../src/components', '../node_modules'], // no
-        // modules: ['../src/components', 'node_modules'], // yes
-        modules: [path.resolve(__dirname, '../', 'src/components'), 'node_modules'], // yes
-        alias: {
-            '@components': path.resolve(__dirname, '../', 'src/components'),
-            // '@': path.resolve('../', 'src/components')
-        },
-        extensions:['.js', '.jsx', '.json', '.tsx']  // 表示这几个文件的后缀名可以省略不写
-    },
-    optimization: {
-        // mergeDuplicateChunks: true // 默认为true
-    }
-}
+	entry: {
+		app: './src/main.js',
+	},
+	output: {
+		path: path.join(__dirname, '../', 'dist'),
+		filename:
+			NODE_ENV === 'production'
+				? '[name].[contenthash:10].js'
+				: '[name].[hash:10].js',
+	},
+	plugins: [
+		new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({
+			filename: 'index.html',
+			template: 'index.html',
+			inject: true,
+		}),
+		// new DashboardPlugin(), // 打包分析
+		new DashboardPlugin({ prot: 3003 }), // 打包分析
+		new MiniCssExtractPlugin(), // css抽离
+		new OptimizeCssPlugin(), // css代码压缩
+		new DuplicatesPlugin({
+			verbose: true,
+		}),
+		// new DuplicatesPlugin({
+		//     // Emit compilation warning or error? (Default: `false`)
+		//     emitErrors: false,
+		//     // Handle all messages with handler function (`(report: string)`)
+		//     // Overrides `emitErrors` output.
+		//     emitHandler: undefined,
+		//     // List of packages that can be ignored. (Default: `[]`)
+		//     // - If a string, then a prefix match of `{$name}/` for each module.
+		//     // - If a regex, then `.test(pattern)` which means you should add slashes
+		//     //   where appropriate.
+		//     //
+		//     // **Note**: Uses posix paths for all matching (e.g., on windows `/` not `\`).
+		//     ignoredPackages: undefined,
+		//     // Display full duplicates information? (Default: `false`)
+		//     verbose: false
+		// })
+		// new DashboardPlugin({port: 9090})
+	],
+	resolve: {
+		// modules: ['../src/components', '../node_modules'], // no
+		// modules: ['../src/components', 'node_modules'], // yes
+		modules: [
+			path.resolve(__dirname, '../', 'src/components'),
+			'node_modules',
+		], // yes
+		alias: {
+			'@components': path.resolve(__dirname, '../', 'src/components'),
+			// '@': path.resolve('../', 'src/components')
+		},
+		extensions: ['.js', '.jsx', '.json', '.tsx'], // 表示这几个文件的后缀名可以省略不写
+	},
+	optimization: {
+		// mergeDuplicateChunks: true // 默认为true
+	},
+};
 module.exports = env => {
     let config = NODE_ENV === 'production' ? productionConfig : developmentConfig;
     return merge(defaultConfig, moduleConfig, config)
