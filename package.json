@@ -5,10 +5,10 @@
 	"main": "main.js",
 	"scripts": {
 		"test": "cross-env NODE_ENV=test echo \"Error: no test specified\" && exit 1",
-		"build": "webpack-dashboard -- cross-env NODE_ENV=production webpack --config config/webpack.config.js ",
-		"start": "webpack-dashboard -- cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.js",
-		"startOrigin": "webpack-dev-server --env development --config config/webpack.config.js",
-		"buildOrigin": "webpack --env production --config config/webpack.config.js ",
+		"dashboard-build": "webpack-dashboard -- cross-env NODE_ENV=production webpack --config config/webpack.config.js ",
+		"dashboard-start": "webpack-dashboard -- cross-env NODE_ENV=development webpack-dev-server --config config/webpack.config.js",
+		"start": "webpack-dev-server --env development --config config/webpack.config.js",
+		"build": "webpack --env production --config config/webpack.config.js ",
 		"stylelint": "stylelint \"src/**/*.(vue|scss)\" --fix"
 	},
 	"keywords": [],
@@ -19,6 +19,7 @@
 		"@babel/preset-env": "^7.6.3",
 		"@babel/preset-react": "^7.14.5",
 		"@types/react": "^17.0.20",
+		"@types/react-dom": "^17.0.11",
 		"babel-loader": "^8.0.6",
 		"babel-plugin-import": "^1.13.3",
 		"clean-webpack-plugin": "^4.0.0-alpha.0",

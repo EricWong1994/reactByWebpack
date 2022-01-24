@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as Server  from './apis/index.js'
-import RouterMain from './router/index.js'
+import * as Server from './apis/index.js';
+import RouterMain from './router/index.js';
+import App from './App';
 // import 'antd/dist/antd.css';
 // import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 
@@ -26,4 +27,4 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // import ColorBlockParent from '@components/advance/13/colorBlockParent';
 
 // 14 antd 源码构建流程
-import ButtonL from '@components/antd/genneral/ButtonL/index';
+// import ButtonL from '@components/antd/genneral/ButtonL/index';
