@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider, Button } from 'antd';
+import './app.less';
 
 export default function App() {
 	const myGetPrefixCls = (
@@ -20,7 +21,7 @@ export default function App() {
 
 	return (
 		<div>
-			<div>App</div>
+			<div className='app-test'>App</div>
 			<Button>Button</Button>
 			<br></br>
 			<ConfigProvider
