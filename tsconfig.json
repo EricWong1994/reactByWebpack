@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+  	"experimentalDecorators": true,
     "sourceMap": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
@@ -8,6 +9,8 @@
     "jsx": "react",
     "allowJs": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
+    // "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true, //https://issuehunt.io/r/ant-design/ant-design/issues/18273
+
   }
 }

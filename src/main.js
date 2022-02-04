@@ -2,7 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import * as Server from './apis/index.js';
 import RouterMain from './router/index.js';
-import App from './App';
+// import App from './App';
+import Item from './mobxx/moboxReact';
+;
+
+
 // import 'antd/dist/antd.css';
 // import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 

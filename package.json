@@ -16,6 +16,7 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@babel/core": "^7.6.4",
+		"@babel/plugin-proposal-decorators": "^7.17.0",
 		"@babel/preset-env": "^7.6.3",
 		"@babel/preset-react": "^7.14.5",
 		"@types/react": "^17.0.20",
@@ -31,6 +32,9 @@
 		"inspectpack": "^4.7.1",
 		"less-loader": "^6.0.0",
 		"marked": "^2.0.7",
+		"mobx": "^6.3.13",
+		"mobx-react": "^7.2.1",
+		"mobx-react-lite": "^3.2.3",
 		"mockjs": "^1.0.1-beta3",
 		"node-sass": "^4.12.0",
 		"optimize-css-assets-webpack-plugin": "^4.0.0",

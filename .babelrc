@@ -1,7 +1,10 @@
 {
     "compact": false,
+    // "presets": ["@babel/preset-env", "@babel/preset-react", "mobx", "es2015", "stage-1"],
     "presets": ["@babel/preset-env", "@babel/preset-react"],
     "plugins": [
+      // ["transform-decorators-legacy"], // 弃用
+      ["@babel/plugin-proposal-decorators", {"legacy": true}],
       ["import", {
         "libraryName": "antd",
         "libraryDirectory": "es",

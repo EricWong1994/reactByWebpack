@@ -1,4 +1,5 @@
 {
+    "experimentalDecorators": true,
     "compilerOptions": {
         "jsx": "react",
         "target": "ES6",
@@ -10,7 +11,8 @@
           "@/*": ["src/*"],
         //   "@components": ["src/components"],
           "@components/*": ["src/components/*"],
-        }
+        },
+        // "experimentalDecorators": true
     },
     "exclude": [
         "node_modules"
