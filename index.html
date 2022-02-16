@@ -6,10 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body,html,#app {
-            height: 100%;
-        }
+  body,
+  html,
+  #app {
+    height: 100%;
+  }
     </style>
+        <script type="module">
+            import {getCLS, getFID,getFCP,getTTFB, getLCP} from 'https://unpkg.com/web-vitals?module';
+            getCLS(console.log);
+            getFID(console.log);
+            getLCP(console.log);
+            getFCP(console.log);
+            getTTFB(console.log);
+        </script>
 </head>
 
 <body>
