@@ -21,7 +21,6 @@ const ObservePerson: FC<IType> = () => {
 	// });
 
 	const person = useLocalObservable<IType>(() => ({ name: 'John' }));
-	console.log('person: ', person);
 	// const person: {name: string} = useObserver(() => {{ name: 'John' }});
 	return (
 		<div>

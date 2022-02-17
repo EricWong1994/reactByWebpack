@@ -4,7 +4,9 @@ import * as Server from './apis/index.js';
 import RouterMain from './router/index.js';
 // import App from './App';
 // import Item from './mobxx/moboxReact';
+// import ObservePerson from './mobxx/mobxReactLite';
 import ObservePerson from './mobxx/mobxReactLite';
+import EchartsPractice from './others/echartsPractice/helloWorld'
 ;
 
 // import 'antd/dist/antd.css';
