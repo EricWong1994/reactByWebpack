@@ -1,18 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import * as Server from './apis/index.js';
-import RouterMain from './router/index.js';
+// import * as Server from './apis/index.js';
+// import RouterMain from './router/index.js';
+
 // import App from './App';
 // import Item from './mobxx/moboxReact';
 // import ObservePerson from './mobxx/mobxReactLite';
-import ObservePerson from './mobxx/mobxReactLite';
-import EchartsPractice from './others/echartsPractice/helloWorld'
-;
+// echarts
+// import EchartsPractice from './others/echartsPractice/helloWorld'
 
+// import Tree from './components/antd/dataDisplay/Tree'
+// import DefaultTree from './components/antd/dataDisplay/Tree/default'
+import HelloAntdPro from './components/antdPro/hello'
 // import 'antd/dist/antd.css';
-// import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
+import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 
-process.env.NODE_ENV === 'development' && require('../mock/index.js');
+// process.env.NODE_ENV === 'development' && require('../mock/index.js');
 
 // ReactDOM.render(
 //     <RouterMain></RouterMain>,
