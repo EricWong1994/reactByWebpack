@@ -23,8 +23,8 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        // use: './markdown-loader'
-        use: ['html-loader', './markdown-loader']
+        use: './markdown-loader'
+        // use: ['html-loader', './markdown-loader']
       },
       {
         test: /\.js$/,

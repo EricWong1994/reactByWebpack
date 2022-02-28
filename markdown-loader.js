@@ -3,7 +3,7 @@ const marked = require('marked');
 module.exports = source => {
     console.log('source', source); // source # About
     // return 'hello loader ~'
-    return 'console.log("hello loader ~")' // 王石浩 this is a markdown file.
+    return 'console.log("hello loader ~")' // 这段代码会
 
 
 //      // 1. 将 markdown 转换为 html 字符串

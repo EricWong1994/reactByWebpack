@@ -8,3 +8,6 @@ ___CSS_LOADER_EXPORT___.push([module.i, "body {\n    margin: 0 auto;\n    paddin
 // Exports
 /* harmony default export */ __webpack_exports__["a"] = (___CSS_LOADER_EXPORT___);
 ```
+
+### 
+bundle中会生成console.log("hello loader ~") js代码
