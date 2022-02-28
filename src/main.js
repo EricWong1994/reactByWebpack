@@ -4,8 +4,9 @@
 
 // document.body.append(heading)
 
-// import about from './about.md'
+// markdown-loader的使用
+import about from './about.md'
 
-import {a} from './test'
+// import {a} from './test'
 
-// console.log(about)
+console.log('about', about)
