@@ -1,6 +1,8 @@
 const marked = require('marked');
 
-module.exports = source => {
+// module.exports = source => {
+module.exports = function(source) {
+    console.log('this', this); // source # About 王石浩 this is a markdown file.
     console.log('source', source); // source # About 王石浩 this is a markdown file.
     // return 'hello loader ~'
     // return 'console.log("hello loader ~")' // 这段代码会
@@ -18,6 +20,8 @@ module.exports = source => {
     // 方法2 生成的html，交由html-loader进行处理
 
     const html = marked(source);
-    console.log('html: ', html);
+    // console.log('html: ', html); 
+    // html:  <h1 id="about">About</h1>
+    // {/* <p>王石浩 this is a markdown file.</p> */}
     return html;
 }
