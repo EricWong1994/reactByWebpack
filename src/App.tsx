@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider, Button } from 'antd';
+import Index from './pages/index/index';
 import './app.less';
 
 export default function App() {
@@ -35,4 +36,5 @@ export default function App() {
 	);
 }
 
-ReactDOM.render(<App></App>, document.querySelector('#app'));
+// ReactDOM.render(<App></App>, document.querySelector('#app'));
+// ReactDOM.render(<Index />, document.querySelector('#app'));
