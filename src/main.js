@@ -7,10 +7,13 @@ import RouterMain from './router/index.js'; // router（需注释下方APP)
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 
 // process.env.NODE_ENV === 'development' && require('../mock/index.js');
-ReactDOM.render(
-    <RouterMain></RouterMain>,
-    document.querySelector('#app')
-)
+// ReactDOM.render(
+//     <RouterMain></RouterMain>,
+//     document.querySelector('#app')
+// )
+
+import FormDemo from '@components/antd/dataDisplay/Form';
+
 
 // import Item from './mobxx/moboxReact';
 // import ObservePerson from './mobxx/mobxReactLite';
