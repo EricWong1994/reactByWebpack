@@ -12,7 +12,8 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 //     document.querySelector('#app')
 // )
 
-import FormDemo from '@components/antd/dataDisplay/Form';
+import Hello from '@components/antd/dataEntry/Cascader/Hello.tsx';
+// import FormDemo from '@components/antd/dataDisplay/Form';
 
 
 // import Item from './mobxx/moboxReact';
