@@ -12,9 +12,12 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 //     document.querySelector('#app')
 // )
 
+// 虚拟滚动
+import VirtualTable from './others/virtualList/VirtualTable'
+
 // 表单
 // import Hello from '@src/components/formily/hello.tsx';
-import Hello from '@components/formily/hello.tsx';
+// import Hello from '@components/formily/hello.tsx';
 // import Hello from '@components/antd/dataEntry/Cascader/Hello.tsx';
 // import FormDemo from '@components/antd/dataDisplay/Form';
 
