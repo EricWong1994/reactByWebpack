@@ -12,8 +12,11 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 //     document.querySelector('#app')
 // )
 
+import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
+
+
 // 虚拟滚动
-import ReactWindowDemo from './others/virtualList/reactWindowDemo'
+// import ReactWindowDemo from './others/virtualList/reactWindowDemo'
 // import VirtualTable from './others/virtualList/VirtualTable'
 
 // 表单
