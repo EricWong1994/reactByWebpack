@@ -1,1 +1,1 @@
-命令行 执行`webpack`即可打包
+命令行 执行 `npx webpack`即可打包
