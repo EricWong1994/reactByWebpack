@@ -1,4 +1,7 @@
+import React from 'react';
 import { Checkbox, Button } from 'antd';
+import ReactDOM from 'react-dom';
+const mountNode = document.querySelector('#antd');
 
 class App extends React.Component {
 	state = {
@@ -14,7 +17,7 @@ class App extends React.Component {
 		this.setState({ disabled: !this.state.disabled });
 	};
 
-	onChange = e => {
+	onChange = (e: any) => {
 		console.log('checked = ', e.target.checked);
 		this.setState({
 			checked: e.target.checked,

@@ -12,7 +12,8 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 //     document.querySelector('#app')
 // )
 
-import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
+// 自定义FormItem
+// import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 
 
 // 虚拟滚动
@@ -24,6 +25,7 @@ import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 // import Hello from '@components/formily/hello.tsx';
 // import Hello from '@components/antd/dataEntry/Cascader/Hello.tsx';
 // import FormDemo from '@components/antd/dataDisplay/Form';
+import FormIndex from '@components/antd/dataDisplay/Form';
 
 
 // import Item from './mobxx/moboxReact';
