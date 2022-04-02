@@ -7,11 +7,11 @@ import React from 'react';
 // 非阻塞校验
 // import NoBlockRule from './NoBlockRule';
 // // 动态增减表单项
-// import DynamicFieldSet from './DynamicFieldSet';
+import DynamicFieldSet from './DynamicFieldSet';
 // 动态增减嵌套表单项
 import DynamicFormnestItems from './DynamicFormnestItems';
 // 复杂的动态增减表单项
-import ComplexDynamicFormItem from './ComplexDynamicFormItem';
+// import ComplexDynamicFormItem from './ComplexDynamicFormItem';
 // 嵌套结构与校验信息
 import Nest from './Nest';
 // 复杂一点的控件
@@ -42,7 +42,6 @@ import Nest from './Nest';
 // import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
 // 校验其他组件
 // import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
-
 
 const mountNode = document.querySelector('#antd');
 
@@ -115,6 +114,7 @@ const FormIndex = () => {
 			{/* <DynamicFieldSet /> */}
 			{/* <DynamicFormnestItems /> */}
 			{/* <ComplexDynamicFormItem /> */}
+			{/* 嵌套结构与校验信息 */}
 			<Nest />
 		</div>
 	);
