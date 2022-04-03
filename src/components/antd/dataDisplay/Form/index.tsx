@@ -2,16 +2,16 @@ import { Form, Input, Button, Checkbox } from 'antd';
 import ReactDOM from 'react-dom';
 import React from 'react';
 // import FormMethods from './FormMethods';
-// import FormLayoutDemo from './FormLayoutDemo';
-// import FormLayoutRequiredMark from './FormLayoutRequiredMark'; // 必选样式
+import FormLayoutDemo from './FormLayoutDemo';
+import FormLayoutRequiredMark from './FormLayoutRequiredMark'; // 必选样式
 // 非阻塞校验
-// import NoBlockRule from './NoBlockRule';
+import NoBlockRule from './NoBlockRule';
 // // 动态增减表单项
 import DynamicFieldSet from './DynamicFieldSet';
 // 动态增减嵌套表单项
 import DynamicFormnestItems from './DynamicFormnestItems';
 // 复杂的动态增减表单项
-// import ComplexDynamicFormItem from './ComplexDynamicFormItem';
+import ComplexDynamicFormItem from './ComplexDynamicFormItem';
 // 嵌套结构与校验信息
 import Nest from './Nest';
 // 复杂一点的控件
@@ -108,7 +108,7 @@ const FormIndex = () => {
 	return (
 		<div>
 			{/* <FormMethods /> */}
-			{/* <FormLayoutDemo /> */}
+			<FormLayoutDemo />
 			{/* <FormLayoutRequiredMark /> */}
 			{/* <NoBlockRule /> */}
 			{/* <DynamicFieldSet /> */}
@@ -123,7 +123,7 @@ const FormIndex = () => {
 			{/* 表单数据存储于上层组件 */}
 			{/* <StoreFormDataintoUpperComponent /> */}
 			{/* 多表单联动 */}
-			<ControlBetweenForms />
+			{/* <ControlBetweenForms /> */}
 		</div>
 	);
 };

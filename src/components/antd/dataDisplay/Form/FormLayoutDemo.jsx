@@ -6,6 +6,7 @@ const FormLayoutDemo = () => {
 	const [formLayout, setFormLayout] = useState('horizontal');
 
 	const onFormLayoutChange = ({ layout }) => {
+		console.log('layout: ', layout);
 		setFormLayout(layout);
 	};
 
@@ -37,7 +38,7 @@ const FormLayoutDemo = () => {
 			initialValues={{
 				layout: formLayout,
 			}}
-			onValuesChange={onFormLayoutChange}
+			// onValuesChange={onFormLayoutChange}
 		>
 			<Form.Item label='Form Layout' name='layout'>
 				<Radio.Group value={formLayout}>
@@ -52,6 +53,18 @@ const FormLayoutDemo = () => {
 			<Form.Item label='Field B'>
 				<Input placeholder='input placeholder' />
 			</Form.Item>
+			{/* 其它测试 */}
+			<Form.Item messageVariables={{ another: 'good' }} label='user'>
+				<Input />
+			</Form.Item>
+			<Form.Item
+				messageVariables={{ label: 'good' }}
+				label={<span>user</span>}
+			>
+				<Input />
+			</Form.Item>
+			{/* 其它测试 */}
+
 			<Form.Item {...buttonItemLayout}>
 				<Button type='primary'>Submit</Button>
 			</Form.Item>
