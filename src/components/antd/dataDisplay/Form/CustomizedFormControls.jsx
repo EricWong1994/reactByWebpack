@@ -22,6 +22,8 @@ const PriceInput = ({ value = {}, onChange }) => {
 			return;
 		}
 
+		console.log('value: ', value);
+		// todo 这句代码作用是？
 		if (!('number' in value)) {
 			setNumber(newNumber);
 		}
@@ -64,9 +66,9 @@ const PriceInput = ({ value = {}, onChange }) => {
 			</Select>
 		</span>
 	);
-};
+};;
 
-const Demo = () => {
+const CustomizedFormControls = () => {
 	const onFinish = values => {
 		console.log('Received values from form: ', values);
 	};
@@ -111,4 +113,5 @@ const Demo = () => {
 	);
 };
 
-ReactDOM.render(<Demo />, mountNode);
+// ReactDOM.render(<Demo />, mountNode);
+export default CustomizedFormControls;

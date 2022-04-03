@@ -1,7 +1,7 @@
 // ComplexFormControl
 
+import React from 'react';
 import { Form, Input, Select, Tooltip, Button, Space, Typography } from 'antd';
-import { React } from 'react';
 const { Option } = Select;
 
 const ComplexFormControl = () => {
@@ -37,6 +37,26 @@ const ComplexFormControl = () => {
 					</Tooltip>
 				</Space>
 			</Form.Item>
+			{/* <Form.Item label='Usernametest'>
+				<Space>
+					<Form.Item
+						name='usernametest'
+						rules={[
+							{ required: true, message: 'Username is required' },
+						]}
+					>
+						<Input
+							style={{ width: 160 }}
+							placeholder='Please input'
+						/>
+					</Form.Item>
+					<Tooltip title='Useful information'>
+						<Typography.Link href='#API'>
+							Need Help?
+						</Typography.Link>
+					</Tooltip>
+				</Space>
+			</Form.Item> */}
 			<Form.Item label='Address'>
 				<Input.Group compact>
 					<Form.Item

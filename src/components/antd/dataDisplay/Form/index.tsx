@@ -15,13 +15,13 @@ import DynamicFormnestItems from './DynamicFormnestItems';
 // 嵌套结构与校验信息
 import Nest from './Nest';
 // 复杂一点的控件
-// import ComplexFormControl from './ComplexFormControl';
+import ComplexFormControl from './ComplexFormControl';
 // 自定义表单控件
-// import CustomizedFormControls from './CustomizedFormControls';
+import CustomizedFormControls from './CustomizedFormControls';
 // 表单数据存储于上层组件
-// import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
+import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
 // 多表单联动
-// import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
+import ControlBetweenForms from './ControlBetweenForms';
 // 内联登录栏
 // import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
 // 登录框
@@ -115,7 +115,15 @@ const FormIndex = () => {
 			{/* <DynamicFormnestItems /> */}
 			{/* <ComplexDynamicFormItem /> */}
 			{/* 嵌套结构与校验信息 */}
-			<Nest />
+			{/* <Nest /> */}
+			{/* 复杂一点的控件 */}
+			{/* <ComplexFormControl /> */}
+			{/* 自定义表单控件 */}
+			{/* <CustomizedFormControls /> */}
+			{/* 表单数据存储于上层组件 */}
+			{/* <StoreFormDataintoUpperComponent /> */}
+			{/* 多表单联动 */}
+			<ControlBetweenForms />
 		</div>
 	);
 };
