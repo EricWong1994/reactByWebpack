@@ -6,6 +6,8 @@ import FormLayoutDemo from './FormLayoutDemo';
 import FormLayoutRequiredMark from './FormLayoutRequiredMark'; // 必选样式
 // 非阻塞校验
 import NoBlockRule from './NoBlockRule';
+import FormListjubujiaoyan from './Validate/FormListjubujiaoyan';
+import Threebasecase from './Validate/Threebasecase';
 // // 动态增减表单项
 import DynamicFieldSet from './DynamicFieldSet';
 // 动态增减嵌套表单项
@@ -123,11 +125,16 @@ const FormIndex = () => {
 			{/* 自定义表单控件 */}
 			{/* <CustomizedFormControls /> */}
 			{/* 自定义表单-颜色选择器 ColorPicker */}
-			<ColorPicker />
+			{/* <ColorPicker /> */}
 			{/* 表单数据存储于上层组件 */}
 			{/* <StoreFormDataintoUpperComponent /> */}
 			{/* 多表单联动 */}
 			{/* <ControlBetweenForms /> */}
+
+			{/* 校验 */}
+			{/* <FormListjubujiaoyan /> */}
+			{/* 3中校验时机 */}
+			<Threebasecase />
 		</div>
 	);
 };

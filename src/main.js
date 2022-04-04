@@ -21,12 +21,14 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 // import VirtualTable from './others/virtualList/VirtualTable'
 
 // 表单
+import FormIndex from '@components/antd/dataDisplay/Form';
 // import Hello from '@src/components/formily/hello.tsx';
 // import Hello from '@components/formily/hello.tsx';
 // import Hello from '@components/antd/dataEntry/Cascader/Hello.tsx';
 // import FormDemo from '@components/antd/dataDisplay/Form';
-import FormIndex from '@components/antd/dataDisplay/Form';
 
+// 上传
+// import UploadIndex from '@components/antd/dataDisplay/Upload';
 
 // import Item from './mobxx/moboxReact';
 // import ObservePerson from './mobxx/mobxReactLite';
