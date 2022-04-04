@@ -21,6 +21,7 @@ const FormMethods = () => {
 	const [form] = Form.useForm();
 
 	const onGenderChange = (value: any) => {
+		console.log('onGenderChange value: ', value);
 		switch (value) {
 			case 'male':
 				form.setFieldsValue({
@@ -42,7 +43,7 @@ const FormMethods = () => {
 	};
 
 	const onFinish = (values: any) => {
-		console.log(values);
+		console.log('values', values);
 	};
 
 	const onReset = () => {
@@ -56,9 +57,41 @@ const FormMethods = () => {
 		});
 	};
 
+	const btnClick = () => {
+		// 类型“{ note: string; }”的参数不能赋给类型“FieldData[]”的参数。
+		// 对象文字可以只指定已知属性，并且“note”不在类型“FieldData[]”中。
+		// form.setFields({ note: 'hi, there' })
+		// 该方法会自动触发submit，成功则执行onFinish，
+		// form.setFields([
+		// 	{
+		// 		name: 'gender',
+		// 		value: '测试性别',
+		// 		errors: ['error message'],
+		// 	},
+		// 	{
+		// 		name: 'note',
+		// 		value: '测试notes',
+		// 		errors: ['error message'],
+		// 	},
+		// ]);
+
+		form.setFieldsValue({
+			// note: 'Hi, man!',
+			gender: '测试性别',
+		});
+		// form.setFields([
+		// 	{
+		// 		name: 'gender',
+		// 		value: '测试性别',
+		// 		errors: ['error message'],
+		// 	},
+		// ]);
+	};
+
 	return (
 		<Form {...layout} form={form} name='control-hooks' onFinish={onFinish}>
-			<Form.Item
+			<button onClick={btnClick}>按钮</button>
+			{/* <Form.Item
 				name='note'
 				label='Note'
 				rules={[
@@ -68,7 +101,7 @@ const FormMethods = () => {
 				]}
 			>
 				<Input />
-			</Form.Item>
+			</Form.Item> */}
 			<Form.Item
 				name='gender'
 				label='Gender'

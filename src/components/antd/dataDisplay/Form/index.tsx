@@ -1,7 +1,7 @@
 import { Form, Input, Button, Checkbox } from 'antd';
 import ReactDOM from 'react-dom';
 import React from 'react';
-// import FormMethods from './FormMethods';
+import FormMethods from './FormMethods';
 import FormLayoutDemo from './FormLayoutDemo';
 import FormLayoutRequiredMark from './FormLayoutRequiredMark'; // 必选样式
 // 非阻塞校验
@@ -18,6 +18,7 @@ import Nest from './Nest';
 import ComplexFormControl from './ComplexFormControl';
 // 自定义表单控件
 import CustomizedFormControls from './CustomizedFormControls';
+import ColorPicker from './DIYFormItem/ColorPicker';
 // 表单数据存储于上层组件
 import StoreFormDataintoUpperComponent from './StoreFormDataintoUpperComponent';
 // 多表单联动
@@ -107,8 +108,9 @@ const mountNode = document.querySelector('#antd');
 const FormIndex = () => {
 	return (
 		<div>
+			{/* 简单的表单联动 */}
 			{/* <FormMethods /> */}
-			<FormLayoutDemo />
+			{/* <FormLayoutDemo /> */}
 			{/* <FormLayoutRequiredMark /> */}
 			{/* <NoBlockRule /> */}
 			{/* <DynamicFieldSet /> */}
@@ -120,6 +122,8 @@ const FormIndex = () => {
 			{/* <ComplexFormControl /> */}
 			{/* 自定义表单控件 */}
 			{/* <CustomizedFormControls /> */}
+			{/* 自定义表单-颜色选择器 ColorPicker */}
+			<ColorPicker />
 			{/* 表单数据存储于上层组件 */}
 			{/* <StoreFormDataintoUpperComponent /> */}
 			{/* 多表单联动 */}

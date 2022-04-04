@@ -1,3 +1,7 @@
+/**
+ * @file CustomizedFormControls
+ * @description 自定义表单控件
+ */
 import React, { useState } from 'react';
 import { Form, Input, Select, Button } from 'antd';
 const { Option } = Select;
@@ -66,7 +70,7 @@ const PriceInput = ({ value = {}, onChange }) => {
 			</Select>
 		</span>
 	);
-};;
+};
 
 const CustomizedFormControls = () => {
 	const onFinish = values => {
