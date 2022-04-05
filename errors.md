@@ -16,3 +16,9 @@ BREAKING CHANGE: There need to exist a hook at 'this.hooks'. To create a compati
 
 2、Browserslist: caniuse-lite is outdated. Please run: npx browserslist@latest --update-db
 3、"global-prefix" is empty.
+
+
+4 TypeError: Invalid value used in weak set
+原因："mini-css-extract-plugin": "^2.6.0",
+    at WeakSet.add (<anonymous>)
+    at MiniCssExtractPlugin.apply (/Users/wangshihao/Desktop/github/reactByWebpack/node_modules/mini-css-extract-plugin/dist/index.js:640:18)

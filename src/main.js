@@ -13,3 +13,5 @@ document.getElementsByClassName('container')[0].innerHTML = about; // 页面就�
 // <p>王石浩 this is a markdown file.</p>
 
 // import {a} from './test'
+console.log('hhhh');
+// console.log('gggg');

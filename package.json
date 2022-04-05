@@ -5,23 +5,28 @@
 	"main": "index.js",
 	"dependencies": {},
 	"devDependencies": {
+		"@babel/core": "^7.6.4",
+		"@babel/preset-env": "^7.6.3",
+		"babel-loader": "^8.0.6",
 		"clean-webpack-plugin": "^4.0.0-alpha.0",
 		"copy-webpack-plugin": "^5.0.4",
 		"css-loader": "^5.2.6",
 		"html-loader": "^0.5.5",
 		"html-webpack-plugin": "^3.2.0",
+		"lodash.union": "^4.6.0",
 		"marked": "^2.0.7",
+		"mini-css-extract-plugin": "^0.9.0",
+		"minimatch": "^5.0.1",
+		"recursive-readdir-sync": "^1.0.6",
 		"style-loader": "^2.0.0",
 		"webpack": "^4.40.2",
 		"webpack-cli": "^3.3.9",
-		"webpack-dev-server": "^3.11.2",
-		"@babel/core": "^7.6.4",
-		"@babel/preset-env": "^7.6.3",
-		"babel-loader": "^8.0.6"
+		"webpack-dev-server": "^3.11.2"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "webpack --mode development"
+		"build": "webpack --mode development",
+		"watch": "webpack --watch --mode development"
 	},
 	"repository": {
 		"type": "git",

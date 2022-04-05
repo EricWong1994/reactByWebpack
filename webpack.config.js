@@ -6,24 +6,35 @@ const RemoveCommentsPlugin = require('./remove-comments-plugins')
 const SetScriptTimestampPlugin = require('./src/plugins/SetScriptTimestampPlugin');
 const No1WebpackPlugin = require('./src/plugins/No1-webpack-plugin');
 const No2WebpackPlugin = require('./src/plugins/No2-webpack-plugin');
+const FileListPlugin = require('./src/plugins/File-list-plugin');
+const WatcherPlugin = require('./src/plugins/Watch-plugin');
+const DecideHtmlPlugin = require('./src/plugins/Decide-html-plugin');
+const MyCleanPlugin = require('./src/plugins/My-Clean-plugin');
 // const CopyWebpackPlugin = require('copy-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // ./webpack.config.js
 /** @type {import('webpack').Configuration} */
 module.exports = {
-	entry: './src/main.js',
+	// entry: './src/main.js',
+	entry: ['./src/main.js', './src/style.css'],
 	// entry: './src/main.css',
-	mode: 'none',
+	// 待打开
+	// mode: 'none',
+	// output: {
+	// 	filename: 'bundle.js',
+	// 	path: path.join(__dirname, 'dist'),
+	// },
 	output: {
-		filename: 'bundle.js',
-		path: path.join(__dirname, 'dist'),
+		filename: '[name].[contenthash].js',
+		path: path.resolve(__dirname, 'dist'),
 	},
 	module: {
 		rules: [
 			{
 				test: /\.css$/,
 				// use: 'css-loader'
-				use: ['style-loader', 'css-loader'],
+				// use: ['style-loader', 'css-loader'],
+				use: [MiniCssExtractPlugin.loader, 'css-loader'],
 			},
 			{
 				test: /\.md$/,
@@ -42,7 +53,8 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new CleanWebpackPlugin(),
+		// new CleanWebpackPlugin(),
+		// new MyCleanPlugin(),
 		new HtmlWebpackPlugin({
 			title: 'Webpack Plugin Sample111',
 			// meta: {
@@ -50,11 +62,20 @@ module.exports = {
 			// }
 			template: './src/index.html',
 		}),
+		new MyCleanPlugin({
+			exclude: ['main.9a044b202d040a851973.js'],
+		}),
 		// new HelloWorldPlugin(),
 		// new No1WebpackPlugin({ msg: 'good boy' }),
-		new No2WebpackPlugin({ msg: 'bad boy' }),
+		// new No2WebpackPlugin({ msg: 'bad boy' }),
+		// new FileListPlugin(),
+		// new WatcherPlugin(),
+		// new DecideHtmlPlugin(),
 		// new SetScriptTimestampPlugin(),
 		// new RemoveCommentsPlugin(),
+		new MiniCssExtractPlugin({
+			filename: 'css/[name].[contenthash].css',
+		}),
 		// new CopyWebpackPlugin({
 		//   // patterns: 'public' // 需要拷贝的目录或者路径通配符
 		//   // patterns: ['public'] // 需要拷贝的目录或者路径通配符
