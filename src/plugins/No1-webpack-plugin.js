@@ -8,15 +8,21 @@
 //     console.log(this.options.msg)
 //   })
 // }
+// 第2版
 class No1WebpackPlugin {
 	constructor(options) {
 		this.options = options;
 	}
 	apply(compiler) {
-		compiler.plugin('done', () => {
+		// console.log('compiler: ', compiler);
+		// compiler.plugin('done', () => {
+		// 	console.log(this.options.msg);
+		// });
+		compiler.hooks.done.tap('No1', () => {
 			console.log(this.options.msg);
 		});
 	}
 }
+
 // 3. 将我们的自定义插件导出
 module.exports = No1WebpackPlugin;

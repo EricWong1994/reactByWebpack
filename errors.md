@@ -12,3 +12,7 @@ BREAKING CHANGE: There need to exist a hook at 'this.hooks'. To create a compati
 				);
 
 执行该代码时报错
+
+
+2、Browserslist: caniuse-lite is outdated. Please run: npx browserslist@latest --update-db
+3、"global-prefix" is empty.

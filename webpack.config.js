@@ -2,10 +2,11 @@ const path = require('path')
 const HtmlWebpackPlugin  = require('html-webpack-plugin')
 const {CleanWebpackPlugin}  = require('clean-webpack-plugin')
 const RemoveCommentsPlugin = require('./remove-comments-plugins')
-const HelloWorldPlugin = require('./src/plugins/hello-world-plugin');
+// const HelloWorldPlugin = require('./src/plugins/hello-world-plugin');
 const SetScriptTimestampPlugin = require('./src/plugins/SetScriptTimestampPlugin');
-const No1WebpackPlugin = require('./src/plugins/lindaidai01-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const No1WebpackPlugin = require('./src/plugins/No1-webpack-plugin');
+const No2WebpackPlugin = require('./src/plugins/No2-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 // ./webpack.config.js
 /** @type {import('webpack').Configuration} */
@@ -42,15 +43,16 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		// new HtmlWebpackPlugin({
-		// 	title: 'Webpack Plugin Sample111',
-		// 	// meta: {
-		// 	//   viewport: 'width=device-width'
-		// 	// }
-		// 	template: './src/index.html',
-		// }),
+		new HtmlWebpackPlugin({
+			title: 'Webpack Plugin Sample111',
+			// meta: {
+			//   viewport: 'width=device-width'
+			// }
+			template: './src/index.html',
+		}),
 		// new HelloWorldPlugin(),
-		new No1WebpackPlugin({ msg: 'good boy' }),
+		// new No1WebpackPlugin({ msg: 'good boy' }),
+		new No2WebpackPlugin({ msg: 'bad boy' }),
 		// new SetScriptTimestampPlugin(),
 		// new RemoveCommentsPlugin(),
 		// new CopyWebpackPlugin({
