@@ -11,7 +11,7 @@ class RemoveCommentsPlugin {
       compiler.hooks.emit.tap('RemoveCommentsPlugin', compilation => {
         // compilation => 可以理解为此次打包的上下文
         for (const name in compilation.assets) {
-          console.log(name) // 这里会输出文件名称：bundle.js index.html
+          console.log('name', name) // 这里会输出文件名称：bundle.js index.html
             // console.log(compilation.assets[name].source()) // 输出文件内容
 
             if (name.endsWith('.js')) {

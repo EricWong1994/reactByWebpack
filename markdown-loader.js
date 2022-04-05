@@ -2,8 +2,9 @@ const marked = require('marked');
 
 // module.exports = source => {
 module.exports = function(source) {
-    console.log('this', this); // source # About 王石浩 this is a markdown file.
-    console.log('source', source); // source # About 王石浩 this is a markdown file.
+    // console.log('this', this); // source # About 王石浩 this is a markdown file.
+    // console.log('source', source); // source # About 王石浩 this is a markdown file.
+
     // return 'hello loader ~'
     // return 'console.log("hello loader ~")' // 这段代码会
 
