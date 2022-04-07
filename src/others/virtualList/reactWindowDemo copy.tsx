@@ -5,6 +5,7 @@ import classNames from 'classnames';
 import { Table, Card } from 'antd';
 import ReactDOM from 'react-dom';
 import VariableExample from './components/VariableExample';
+
 const Row = ({ index, style }: { index: number; style: object }) => (
 	<div style={style}>Row {index}</div>
 );
@@ -18,23 +19,27 @@ const Example = () => (
 function VirtualTable(props: Parameters<typeof Table>[0]) {
 	const { columns, scroll } = props;
 	// console.log('scroll: ', scroll);
-	console.log('columns: ', columns);
 	const [tableWidth, setTableWidth] = useState(0);
 	console.log('tableWidth: ', tableWidth);
 
-	// todo 感叹号是什么意思
+	// todo 感叹号是什么意思 非空断言
 	const widthColumnCount = columns!.filter(({ width }) => !width).length;
-	console.log('widthColumnCount: ', widthColumnCount);
+	console.log('widthColumnCount: ', widthColumnCount); // 3
 	const mergedColumns = columns!.map(column => {
 		if (column.width) {
 			return column;
 		}
+		console.log(
+			'tableWidth / widthColumnCount',
+			tableWidth / widthColumnCount
+		);
 
 		return {
 			...column,
 			width: Math.floor(tableWidth / widthColumnCount),
 		};
 	});
+	console.log('mergedColumns: ', mergedColumns);
 
 	const gridRef = useRef<any>();
 	const [connectObject] = useState<any>(() => {
@@ -53,10 +58,10 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
 	console.log('connectObject: ', connectObject);
 
 	const resetVirtualGrid = () => {
-		gridRef.current.resetAfterIndices({
-			columnIndex: 0,
-			shouldForceUpdate: true,
-		});
+		// gridRef.current.resetAfterIndices({
+		// 	columnIndex: 0,
+		// 	shouldForceUpdate: true,
+		// });
 	};
 
 	useEffect(() => resetVirtualGrid, [tableWidth]);
@@ -75,6 +80,7 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
 				columnCount={mergedColumns.length}
 				columnWidth={(index: number) => {
 					const { width } = mergedColumns[index];
+					console.log('width: ', width);
 					return totalHeight > scroll!.y! &&
 						index === mergedColumns.length - 1
 						? (width as number) - scrollbarSize - 1
@@ -115,6 +121,8 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
 		);
 	};
 
+	// const renderVirtualList = () => <h3>周六周六周六周六</h3>;
+
 	return (
 		<ResizeObserver
 			onResize={({ width }) => {
@@ -138,6 +146,13 @@ function VirtualTable(props: Parameters<typeof Table>[0]) {
 const columns = [
 	{ title: 'A', dataIndex: 'key', width: 150 },
 	{ title: 'B', dataIndex: 'key' },
+	// {
+	// 	title: 'B',
+	// 	// dataIndex: 'key',
+	// 	render: () => {
+	// 		return <h3>哈哈哈哈哈哈哈哈</h3>;
+	// 	},
+	// },
 	{ title: 'C', dataIndex: 'key' },
 	{ title: 'D', dataIndex: 'key' },
 	{ title: 'E', dataIndex: 'key', width: 200 },
@@ -159,7 +174,7 @@ ReactDOM.render(
 			dataSource={data}
 			scroll={{ y: 300, x: '100vw' }}
 		/>
-		<Card
+		{/* <Card
 			style={{
 				display: 'flex',
 				justifyContent: 'center',
@@ -168,7 +183,7 @@ ReactDOM.render(
 		>
 			<Example />
 			<VariableExample />
-		</Card>
+		</Card> */}
 	</div>,
 	document.getElementById('app')
 );

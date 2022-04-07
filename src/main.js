@@ -5,6 +5,7 @@ import RouterMain from './router/index.js'; // router（需注释下方APP)
 // import App from './App';
 
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
+import './app.less'; // 按需加载后移除antd全局样式
 
 // process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // ReactDOM.render(
@@ -17,11 +18,11 @@ import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 
 
 // 虚拟滚动
-// import ReactWindowDemo from './others/virtualList/reactWindowDemo'
+import ReactWindowDemo from './others/virtualList/reactWindowDemo'
 // import VirtualTable from './others/virtualList/VirtualTable'
 
 // 表单
-import FormIndex from '@components/antd/dataDisplay/Form';
+// import FormIndex from '@components/antd/dataDisplay/Form';
 // import Hello from '@src/components/formily/hello.tsx';
 // import Hello from '@components/formily/hello.tsx';
 // import Hello from '@components/antd/dataEntry/Cascader/Hello.tsx';
