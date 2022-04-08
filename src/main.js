@@ -13,12 +13,14 @@ import './app.less'; // 按需加载后移除antd全局样式
 //     document.querySelector('#app')
 // )
 
+// hooks
+import HooksIndex from './hooks/useMemo/index'
 // 自定义FormItem
 // import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 
 
 // 虚拟滚动
-import ReactWindowDemo from './others/virtualList/reactWindowDemo'
+// import ReactWindowDemo from './others/virtualList/reactWindowDemo'
 // import VirtualTable from './others/virtualList/VirtualTable'
 
 // 表单
@@ -55,3 +57,4 @@ import ReactWindowDemo from './others/virtualList/reactWindowDemo'
 
 // 14 antd 源码构建流程
 // import ButtonL from '@components/antd/genneral/ButtonL/index';
+
