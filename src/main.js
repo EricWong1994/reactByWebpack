@@ -1,20 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-// import * as Server from './apis/index.js';
+import * as Server from './apis/index.js';
 import RouterMain from './router/index.js'; // router（需注释下方APP)
 // import App from './App';
 
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 import './app.less'; // 按需加载后移除antd全局样式
 
-// process.env.NODE_ENV === 'development' && require('../mock/index.js');
+process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // ReactDOM.render(
 //     <RouterMain></RouterMain>,
 //     document.querySelector('#app')
 // )
 
 // hooks
-import HooksIndex from './hooks/useMemo/index'
+import HooksIndex from './hooks/index';
 // 自定义FormItem
 // import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 

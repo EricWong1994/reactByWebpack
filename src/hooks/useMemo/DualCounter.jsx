@@ -27,6 +27,7 @@ function CountButton({ onClick, count }) {
 // }
 
 function DualCounter() {
+	console.log('DualCounter this', this);
 	const [count1, setCount1] = React.useState(0);
 	const increment1 = React.useCallback(() => setCount1(c => c + 1), []);
 

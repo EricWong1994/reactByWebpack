@@ -38,12 +38,11 @@ if (env === 'development') {
 			}
 		},
 		err => {
-            console.log('err: ', err);
-			// let status = err.response.status;
-			// switch (+status) {
-			// 	case 404:
-			// 		alert('页面未找到');
-			// }
+			let status = err.response.status;
+			switch (+status) {
+				case 404:
+					alert('页面未找到');
+			}
 			return Promise.reject(err);
 		}
 	);
@@ -84,5 +83,3 @@ export {
     post,
     get
 };
-
-// https://juejin.cn/post/6992763139645243405
