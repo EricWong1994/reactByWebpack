@@ -1,8 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
-import LifecycleDemo from './lifeCycle';
-import ClouseCase from './clouseCase'
+import ClouseCase from './clouseCase';
 export default function UseEffectIndex() {
 	const [counter, setCounter] = useState(0);
 	useEffect(() => {

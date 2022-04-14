@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { Button } from 'antd';
 import UseMemoIndex from './useMemo';
 import UseEffectIndex from './useEffect';
+import UseStateIndex from './useState';
 import { getUserInfo } from '../apis/getUserInfo';
 
 export default function HooksIndex() {
@@ -24,8 +25,9 @@ export default function HooksIndex() {
 			<Button onClick={() => setCounter(counter + 1)}>+</Button>
 			<br />
 			{/* <UseMemoIndex /> */}
-			<UseEffectIndex />
-			<App></App>
+			{/* <UseEffectIndex /> */}
+			<UseStateIndex />
+			{/* <App /> */}
 		</div>
 	);
 }
