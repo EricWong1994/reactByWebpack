@@ -15,3 +15,4 @@ document.getElementsByClassName('container')[0].innerHTML = about; // 页面就�
 // import {a} from './test'
 console.log('hhhh');
 // console.log('gggg');
+import t from './util.js';

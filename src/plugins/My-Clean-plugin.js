@@ -1,3 +1,4 @@
+// recursive-readdir-sync 这个包 淘宝镜像没有
 const recursiveReadSync = require('recursive-readdir-sync');
 const minimatch = require('minimatch');
 const path = require('path');

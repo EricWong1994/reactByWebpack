@@ -15,14 +15,22 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // ./webpack.config.js
 /** @type {import('webpack').Configuration} */
 module.exports = {
-	// entry: './src/main.js',
-	entry: ['./src/main.js', './src/style.css'],
+	entry: './src/main.js',
+	// entry: ['./src/main.js', './src/style.css'],
+	// entry: {
+	// 	main: './src/main.js',
+	// 	entry2: './src/entry2.js',
+	// },
 	// entry: './src/main.css',
 	// 待打开
 	// mode: 'none',
 	// output: {
 	// 	filename: 'bundle.js',
 	// 	path: path.join(__dirname, 'dist'),
+	// },
+	// output: {
+	// 	filename: '[name].[contenthash].js',
+	// 	path: path.resolve(__dirname, 'dist'),
 	// },
 	output: {
 		filename: '[name].[contenthash].js',
