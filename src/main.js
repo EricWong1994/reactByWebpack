@@ -33,8 +33,8 @@ import HooksIndex from './hooks/index';
 // 上传
 // import UploadIndex from '@components/antd/dataDisplay/Upload';
 
-// import Item from './mobxx/moboxReact';
-// import ObservePerson from './mobxx/mobxReactLite';
+// import Item from './mobx/moboxReact';
+// import ObservePerson from './mobx/mobxReactLite';
 // echarts
 // import EchartsPractice from './others/echartsPractice/helloWorld'
 

@@ -4,13 +4,15 @@ import Index from '../pages/index/index.js'
 
 export default class RouterMain extends React.Component {
     render() {
-        return <Router>
-            <Switch>
-                <Route path="/" exact>
-                    <Redirect to='/index'></Redirect>
-                </Route>
-                <Route path="/index" component={Index}></Route>
-            </Switch>
-        </Router>
+        return (
+			<Router>
+				<Switch>
+					<Route path='/' exact>
+						<Redirect to='/index'></Redirect>
+					</Route>
+					<Route ele path='/index' component={Index}></Route>
+				</Switch>
+			</Router>
+		);
     }
 }
