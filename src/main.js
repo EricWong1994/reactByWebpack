@@ -1,8 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {Provider} from 'react-redux';
 import * as Server from './apis/index.js';
 import RouterMain from './router/index.js'; // router（需注释下方APP)
 // import App from './App';
+import AppRedux from './AppRedux';
+// import store from './store'
+import store from './reduxRelated/store'
 
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 import './app.less'; // 按需加载后移除antd全局样式
@@ -12,9 +16,15 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 //     <RouterMain></RouterMain>,
 //     document.querySelector('#app')
 // )
+ReactDOM.render(
+    <Provider store={store}>
+        <AppRedux />
+    </Provider>,
+    document.querySelector('#app')
+)
 
 // hooks
-import HooksIndex from './hooks/index';
+// import HooksIndex from './hooks/index';
 // 自定义FormItem
 // import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 
