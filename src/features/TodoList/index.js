@@ -3,7 +3,8 @@ import { connect } from 'react-redux'; //链接器
 import './index.css';
 
 const TodoList = props => {
-	let { inputValue, list, inputChange, clickBtn, deletItem } = props;
+	let { inputValue, list, inputChange, clickBtn, deletItem, userName } =
+		props;
 
 	const clickBtnHandler = index => {
 		deletItem(index);
@@ -12,6 +13,7 @@ const TodoList = props => {
 	return (
 		<div className='content'>
 			<div className='todoListDiv'>
+				<h3>{userName}</h3>
 				<div className='inputDiv'>
 					<input value={inputValue} onChange={inputChange} />
 					<button onClick={clickBtn}>新增</button>
@@ -40,6 +42,7 @@ const stateToProps = state => {
 	return {
 		inputValue: state.inputValue,
 		list: state.list,
+		userName: state.userInfo,
 	};
 };
 
@@ -70,3 +73,5 @@ const dispatchToProps = dispatch => {
 };
 
 export default connect(stateToProps, dispatchToProps)(TodoList);
+
+// https://codesandbox.io/s/magical-chatelet-p26wj?file=/src/store/reducer.js

@@ -1,16 +1,19 @@
 const defaultState = {
 	inputValue: 'Hearling',
 	list: [],
+	userInfo: '李白',
 };
 
 export default (state = defaultState, action) => {
-	console.log('state: ', state);
 	const { payload } = action;
 
 	if (action.type === 'change_input') {
 		let newState = JSON.parse(JSON.stringify(state));
 		newState.inputValue = action.value;
-		return newState;
+		return {
+			...newState,
+			userInfo: '杜甫',
+		};
 	}
 
 	if (action.type === 'add_item') {

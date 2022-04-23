@@ -6,22 +6,32 @@ import RouterMain from './router/index.js'; // router（需注释下方APP)
 // import App from './App';
 import AppRedux from './AppRedux';
 // import store from './store'
-import store from './reduxRelated/store'
+import store, { persistor } from './reduxRelated/store';
+import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 import './app.less'; // 按需加载后移除antd全局样式
 
+// eslint-disable-next-line no-undef
 process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // ReactDOM.render(
 //     <RouterMain></RouterMain>,
 //     document.querySelector('#app')
 // )
-ReactDOM.render(
-    <Provider store={store}>
-        <AppRedux />
-    </Provider>,
-    document.querySelector('#app')
-)
+
+// redux
+// ReactDOM.render(
+// 	<Provider store={store}>
+// 		<PersistGate loading={null} persistor={persistor}>
+// 			<AppRedux />
+// 		</PersistGate>
+// 	</Provider>,
+// 	document.querySelector('#app')
+// );
+// mobx
+// import MobxApp from './mobx/index';
+require('./mobx/index.js')
+// import ObservePerson from './mobx/mobxReactLite';
 
 // hooks
 // import HooksIndex from './hooks/index';
@@ -43,8 +53,6 @@ ReactDOM.render(
 // 上传
 // import UploadIndex from '@components/antd/dataDisplay/Upload';
 
-// import Item from './mobx/moboxReact';
-// import ObservePerson from './mobx/mobxReactLite';
 // echarts
 // import EchartsPractice from './others/echartsPractice/helloWorld'
 

@@ -12,7 +12,7 @@ export default function AppRedux() {
 			<div className='app-test'>App-redux</div>
 			{/* <Counter /> */}
 			<TodoList></TodoList>
-			<TodoListCopy></TodoListCopy>
+			{/* <TodoListCopy></TodoListCopy> */}
 			<Child></Child>
 			<br></br>
 		</div>

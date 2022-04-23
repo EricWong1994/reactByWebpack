@@ -16,13 +16,13 @@ import ReactDOM from 'react-dom';
 // https://www.typescriptlang.org/tsconfig#allowSyntheticDefaultImports
 
 @observer
-class Item extends React.Component {
+class MobxIndex extends React.Component {
 	// export default class Item extends React.Component {
 	disposer: () => void;
 
 	// 对修饰器的实验支持功能在将来的版本中可能更改。在 "tsconfig" 或 "jsconfig" 中设置 "experimentalDecorators" 选项以删除此警告。
 	@observable
-	count: string = 'right';
+	count = 'right';
 
 	@observable myCount = 0;
 
@@ -34,7 +34,7 @@ class Item extends React.Component {
 
 	// @action 6版本可去掉
 	setCount = () => {
-		console.log('this.coun: ', this.count);
+		console.log('this.count: ', this.count);
 		this.count = this.count === 'right' ? 'wrong' : 'right';
 	};
 
@@ -56,6 +56,7 @@ class Item extends React.Component {
 	render() {
 		return (
 			<div>
+				<h2>MobxIndex</h2>
 				<h3>{this.count}</h3>
 				<h4>{this.helloCount}</h4>
 				<button onClick={this.setCount}>click</button>
@@ -85,6 +86,6 @@ class Item extends React.Component {
 // 	elapsedTime: computed,
 // 	tick: action,
 // });
-export default Item;
+export default MobxIndex;
 
-ReactDOM.render(<Item></Item>, document.querySelector('#app'));
+// ReactDOM.render(<MobxIndex />, document.querySelector('#app'));
