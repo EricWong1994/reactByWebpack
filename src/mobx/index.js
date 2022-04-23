@@ -10,7 +10,8 @@ import {
 } from 'mobx';
 import { observer } from 'mobx-react';
 // import MobxIndex from './moboxReact';
-import GetStart from './getStart';
+// import GetStart from './getStart';
+import MobxVersionSix from './MobxVersionSix'
 
 // function App() {
 // 	return (

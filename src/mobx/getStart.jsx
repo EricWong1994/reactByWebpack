@@ -21,26 +21,34 @@ class Timer {
 }
 
 const myTimer = new Timer();
-
-// Build a "user interface" that uses the observable state.
-const TimerView = observer(({ timer }) => (
-	<button onClick={() => timer.reset()}>
-		Seconds passed: {timer.secondsPassed}
-	</button>
-));
 // const TimerView = ({ timer }) => (
 // 	<button onClick={() => timer.reset()}>
 // 		Seconds passed: {timer.secondsPassed}
 // 	</button>
 // );
+// Build a "user interface" that uses the observable state.
+// const TimerView = observer(({ timer }) => (
+// 	<button onClick={() => timer.reset()}>
+// 		Seconds passed: {timer.secondsPassed}
+// 	</button>
+// ));
+@observer
+class TimerView extends React.Component {
+	render() {
+		return (
+			<div>
+				<h2>GETSTART MOBX</h2>
+				{this.props.timer.secondsPassed}
+			</div>
+		);
+	}
+}
 
-// ReactDOM.render(<TimerView timer={myTimer} />, document.body);
-ReactDOM.render(<TimerView timer={myTimer} />, document.querySelector('#app'));
-// ReactDOM.render(<div>1111</div>, document.querySelector('#app'));
-
-// Update the 'Seconds passed: X' text every second.
 setInterval(() => {
 	myTimer.increase();
 }, 1000);
+
+// ReactDOM.render(<TimerView timer={myTimer} />, document.body);
+ReactDOM.render(<TimerView timer={myTimer} />, document.querySelector('#app'));
 
 export default TimerView;

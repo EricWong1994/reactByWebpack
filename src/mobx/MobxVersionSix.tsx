@@ -17,7 +17,6 @@ import ReactDOM from 'react-dom';
 
 @observer
 class MobxIndex extends React.Component {
-	// export default class Item extends React.Component {
 	disposer: () => void;
 
 	// 对修饰器的实验支持功能在将来的版本中可能更改。在 "tsconfig" 或 "jsconfig" 中设置 "experimentalDecorators" 选项以删除此警告。
@@ -34,7 +33,7 @@ class MobxIndex extends React.Component {
 
 	// @action 6版本可去掉
 	setCount = () => {
-		console.log('this.count: ', this.count);
+		console.log('action --- this.count: ', this.count);
 		this.count = this.count === 'right' ? 'wrong' : 'right';
 	};
 
@@ -70,12 +69,12 @@ class MobxIndex extends React.Component {
 
 	componentDidMount() {
 		this.disposer = autorun(() => {
-			console.log(this.count);
+			console.log('autorun --- this.count', this.count);
 		});
 
 		when(
 			() => this.count === 'wrong',
-			() => console.log(this.count)
+			() => console.log('when --- this.count', this.count)
 		);
 	}
 }
@@ -86,6 +85,6 @@ class MobxIndex extends React.Component {
 // 	elapsedTime: computed,
 // 	tick: action,
 // });
-export default MobxIndex;
+// export default MobxIndex;
 
-// ReactDOM.render(<MobxIndex />, document.querySelector('#app'));
+ReactDOM.render(<MobxIndex />, document.querySelector('#app'));
