@@ -14,10 +14,10 @@ import './app.less'; // 按需加载后移除antd全局样式
 
 // eslint-disable-next-line no-undef
 process.env.NODE_ENV === 'development' && require('../mock/index.js');
-// ReactDOM.render(
-//     <RouterMain></RouterMain>,
-//     document.querySelector('#app')
-// )
+ReactDOM.render(
+    <RouterMain></RouterMain>,
+    document.querySelector('#app')
+)
 
 // redux
 // ReactDOM.render(
@@ -28,9 +28,10 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // 	</Provider>,
 // 	document.querySelector('#app')
 // );
+
 // mobx
 // import MobxApp from './mobx/index';
-require('./mobx/index.js')
+// require('./mobx/index.js')
 // import ObservePerson from './mobx/mobxReactLite';
 
 // hooks

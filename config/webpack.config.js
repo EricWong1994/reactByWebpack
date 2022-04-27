@@ -27,6 +27,10 @@ let defaultConfig = {
 			NODE_ENV === 'production'
 				? '[name].[contenthash:10].js'
 				: '[name].[hash:10].js',
+		publicPath: '/assets/',
+		// http://localhost:8080/assets/app.798e9bc904.js
+		// http://localhost:8080/assets/app.css
+		// publicPath: '/',
 	},
 	plugins: [
 		new CleanWebpackPlugin(),

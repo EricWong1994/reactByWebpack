@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider, Button } from 'antd';
 import Index from './pages/index/index';
-import './app.less';
+// import './app.less';
 
 export default function App() {
 	const myGetPrefixCls = (
