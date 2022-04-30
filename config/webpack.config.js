@@ -76,7 +76,7 @@ let defaultConfig = {
 			'@components': path.resolve(__dirname, '../', 'src/components'),
 			// '@src': path.resolve(__dirname, '../', 'src'),
 			'@common': path.resolve(__dirname, '../', 'src/common'),
-			// src: path.resolve(__dirname, '../', 'src'),
+			src: path.resolve(__dirname, '../', 'src'),
 			// '@': path.resolve('../', 'src/components')
 		},
 		// extensions: ['.js', '.jsx', '.json', '.tsx'], // 表示这几个文件的后缀名可以省略不写

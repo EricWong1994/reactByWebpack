@@ -1,8 +1,8 @@
 import React, { useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
 import { ConfigProvider, Button } from 'antd';
-// import { a } from 'src/common/a';
-import { a } from '@common/a';
+import { a } from 'src/common/a';
+// import { a } from '@common/a';
 // import { a } from '@src/';
 // import { a } from '@components';
 
@@ -44,9 +44,9 @@ export default function App() {
 // ReactDOM.render(<Index />, document.querySelector('#app'));
 
 function TestFuncitonComp() {
-	// debugger;
+	// console.log(a);
+	// console.log(useState);
 	const [count, setCount] = useState(0);
-	console.log('useState: ', useState);
 
 	const increase = () => {
 		a();

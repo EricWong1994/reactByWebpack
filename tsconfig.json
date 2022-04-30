@@ -14,12 +14,8 @@
     // "baseUrl": "./",
     "baseUrl": ".",
     "paths": {
-      // "src": ["./src/*"],
-      // "@common": ["./src/common/*"],
-      // "@common/*": ["./src/common/*"],
+      "src": ["src/*"],
       "@common/*": ["src/common/*"],
-      // "@src": ["./src/*"]
-      // "components": ["./src/components/*"],
     },
   }
 }
