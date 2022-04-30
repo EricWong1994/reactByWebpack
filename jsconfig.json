@@ -11,6 +11,8 @@
           "@/*": ["src/*"],
         //   "@components": ["src/components"],
           "@components/*": ["src/components/*"],
+          // "src": ["./src/*"]
+          // "src": ["src/*"]
         },
         // "experimentalDecorators": true
     },

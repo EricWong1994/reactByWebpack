@@ -1,23 +1,28 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Provider} from 'react-redux';
-import * as Server from './apis/index.js';
-import RouterMain from './router/index.js'; // router（需注释下方APP)
-// import App from './App';
-import AppRedux from './AppRedux';
+// import {Provider} from 'react-redux';
+// import * as Server from './apis/index.js';
+// import RouterMain from './router/index.js'; // router（需注释下方APP)
+import App from './App';
+// import AppRedux from './AppRedux';
 // import store from './store'
-import store, { persistor } from './reduxRelated/store';
-import { PersistGate } from 'redux-persist/lib/integration/react';
+// import store, { persistor } from './reduxRelated/store';
+// import { PersistGate } from 'redux-persist/lib/integration/react';
 
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 import './app.less'; // 按需加载后移除antd全局样式
 
-// eslint-disable-next-line no-undef
-process.env.NODE_ENV === 'development' && require('../mock/index.js');
 ReactDOM.render(
-    <RouterMain></RouterMain>,
+    <App></App>,
     document.querySelector('#app')
 )
+
+// eslint-disable-next-line no-undef
+process.env.NODE_ENV === 'development' && require('../mock/index.js');
+// ReactDOM.render(
+//     <RouterMain></RouterMain>,
+//     document.querySelector('#app')
+// )
 
 // redux
 // ReactDOM.render(

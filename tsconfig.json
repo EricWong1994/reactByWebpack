@@ -11,6 +11,15 @@
     "moduleResolution": "node",
     // "allowSyntheticDefaultImports": true,
     "esModuleInterop": true, //https://issuehunt.io/r/ant-design/ant-design/issues/18273
-
+    // "baseUrl": "./",
+    "baseUrl": ".",
+    "paths": {
+      // "src": ["./src/*"],
+      // "@common": ["./src/common/*"],
+      // "@common/*": ["./src/common/*"],
+      "@common/*": ["src/common/*"],
+      // "@src": ["./src/*"]
+      // "components": ["./src/components/*"],
+    },
   }
 }

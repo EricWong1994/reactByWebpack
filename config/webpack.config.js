@@ -27,7 +27,7 @@ let defaultConfig = {
 			NODE_ENV === 'production'
 				? '[name].[contenthash:10].js'
 				: '[name].[hash:10].js',
-		publicPath: '/assets/',
+		// publicPath: '/assets/',
 		// http://localhost:8080/assets/app.798e9bc904.js
 		// http://localhost:8080/assets/app.css
 		// publicPath: '/',
@@ -69,13 +69,19 @@ let defaultConfig = {
 		// modules: ['../src/components', 'node_modules'], // yes
 		modules: [
 			path.resolve(__dirname, '../', 'src/components'),
+			// path.resolve(__dirname, '../', 'src'),
 			'node_modules',
 		], // yes
 		alias: {
 			'@components': path.resolve(__dirname, '../', 'src/components'),
+			// '@src': path.resolve(__dirname, '../', 'src'),
+			'@common': path.resolve(__dirname, '../', 'src/common'),
+			// src: path.resolve(__dirname, '../', 'src'),
 			// '@': path.resolve('../', 'src/components')
 		},
-		extensions: ['.js', '.jsx', '.json', '.tsx'], // 表示这几个文件的后缀名可以省略不写
+		// extensions: ['.js', '.jsx', '.json', '.tsx'], // 表示这几个文件的后缀名可以省略不写
+		// extensions: ['.js', '.jsx', '.json', '.tsx', 'ts'], // 表示这几个文件的后缀名可以省略不写
+		extensions: ['.js', '.jsx', '.json', '.tsx', '.ts'], // 表示这几个文件的后缀名可以省略不写
 	},
 	optimization: {
 		// mergeDuplicateChunks: true // 默认为true
