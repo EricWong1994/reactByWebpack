@@ -5,6 +5,8 @@ import UseMemoIndex from './useMemo';
 import UseEffectIndex from './useEffect';
 import UseStateIndex from './useState';
 import { getUserInfo } from '../apis/getUserInfo';
+// import * as ComputedApp from './myHook/useAsyncComputed';
+import {App as ComputedApp} from './myHook/useAsyncComputed';
 
 export default function HooksIndex() {
 	const [counter, setCounter] = useState(0);
@@ -33,7 +35,8 @@ export default function HooksIndex() {
 }
 const mountNode = document.querySelector('#app');
 
-ReactDOM.render(<HooksIndex />, mountNode);
+// ReactDOM.render(<HooksIndex />, mountNode);
+ReactDOM.render(<ComputedApp />, mountNode);
 
 function App() {
 	const [name, setName] = useState('App');
