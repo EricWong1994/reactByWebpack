@@ -3,7 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"dependencies": {},
+	"dependencies": {
+		"highlight.js": "^11.5.1",
+		"markdown-it": "^13.0.1"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.6.4",
 		"@babel/preset-env": "^7.6.3",
@@ -21,11 +24,13 @@
 		"style-loader": "^2.0.0",
 		"webpack": "^4.40.2",
 		"webpack-cli": "^3.3.9",
-		"webpack-dev-server": "^3.11.2"
+		"webpack-dev-server": "^3.11.3"
 	},
 	"scripts": {
+		"start": "webpack-dev-server --config webpack.config.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "webpack --mode development",
+		"md": "node ./src/loaders/md.js",
 		"watch": "webpack --watch --mode development"
 	},
 	"repository": {

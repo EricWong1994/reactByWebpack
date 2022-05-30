@@ -24,18 +24,18 @@ module.exports = {
 	// entry: './src/main.css',
 	// 待打开
 	// mode: 'none',
+	output: {
+		filename: 'bundle.js',
+		path: path.join(__dirname, 'dist'),
+	},
 	// output: {
-	// 	filename: 'bundle.js',
-	// 	path: path.join(__dirname, 'dist'),
+	// 	filename: '[name].[contenthash].js',
+	// 	path: path.resolve(__dirname, 'dist'),
 	// },
 	// output: {
 	// 	filename: '[name].[contenthash].js',
 	// 	path: path.resolve(__dirname, 'dist'),
 	// },
-	output: {
-		filename: '[name].[contenthash].js',
-		path: path.resolve(__dirname, 'dist'),
-	},
 	module: {
 		rules: [
 			{
