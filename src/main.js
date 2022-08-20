@@ -12,10 +12,10 @@ import App from './App';
 import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
 import './app.less'; // 按需加载后移除antd全局样式
 
-// ReactDOM.render(
-//     <App></App>,
-//     document.querySelector('#app')
-// )
+ReactDOM.render(
+  <App></App>,
+  document.querySelector('#app')
+)
 
 // eslint-disable-next-line no-undef
 process.env.NODE_ENV === 'development' && require('../mock/index.js');
@@ -87,4 +87,4 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // import SortableList from './features/Drag/SortableList'
 // require('./features/Drag/sortablehoc/basic')
 // import Draghandle from './features/Drag/sortablehoc/drag-handle'
-require('./features/Drag/sortablehoc/collections')
+// require('./features/Drag/sortablehoc/collections')
