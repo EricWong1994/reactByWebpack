@@ -9,8 +9,8 @@ import App from './App';
 // import store, { persistor } from './reduxRelated/store';
 // import { PersistGate } from 'redux-persist/lib/integration/react';
 
-import 'antd/dist/antd.less'; // 按需加载后移除antd全局样式
-import './app.less'; // 按需加载后移除antd全局样式
+import 'antd/dist/antd.less'; // 如果按需加载后，则注释该行
+import './app.less';
 
 ReactDOM.render(
   <App></App>,

@@ -41,12 +41,13 @@ let defaultConfig = {
       inject: true,
     }),
     // new DashboardPlugin(), // 打包分析
-    new DashboardPlugin({ prot: 3003 }), // 打包分析
+    // new DashboardPlugin({ prot: 3003 }), // 打包分析
     new MiniCssExtractPlugin(), // css抽离
     new OptimizeCssPlugin(), // css代码压缩
-    new DuplicatesPlugin({
-      verbose: true,
-    }),
+    // new DuplicatesPlugin({
+    //   verbose: true,
+    // }),
+
     // new DuplicatesPlugin({
     //   // Emit compilation warning or error? (Default: `false`)
     //   emitErrors: false,
@@ -63,13 +64,14 @@ let defaultConfig = {
     //   // Display full duplicates information? (Default: `false`)
     //   verbose: false
     // }),
-    new StatsWriterPlugin({
-      fields: ["assets", "modules"],
-      stats: {
-        // source: true // Needed for webpack5+
-      }
-    })
-    // new DashboardPlugin({port: 9090})
+
+    // new StatsWriterPlugin({
+    //   fields: ["assets", "modules"],
+    //   stats: {
+    //     // source: true // Needed for webpack5+
+    //   }
+    // })
+
   ],
   resolve: {
     // modules: ['../src/components', '../node_modules'], // no
