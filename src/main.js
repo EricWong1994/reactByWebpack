@@ -1,24 +1,24 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React from "react";
+import ReactDOM from "react-dom";
 // import {Provider} from 'react-redux';
 // import * as Server from './apis/index.js';
 // import RouterMain from './router/index.js'; // router（需注释下方APP)
-import App from './App';
+import App from "./App";
 // import AppRedux from './AppRedux';
 // import store from './store'
 // import store, { persistor } from './reduxRelated/store';
 // import { PersistGate } from 'redux-persist/lib/integration/react';
 
-import 'antd/dist/antd.less'; // 如果按需加载后，则注释该行
-import './app.less';
+import "antd/dist/antd.less"; // 如果按需加载后，则注释该行
+import "./app.less";
 
-ReactDOM.render(
-  <App></App>,
-  document.querySelector('#app')
-)
+// ReactDOM.render(
+//   <App></App>,
+//   document.querySelector('#app')
+// )
 
 // eslint-disable-next-line no-undef
-process.env.NODE_ENV === 'development' && require('../mock/index.js');
+process.env.NODE_ENV === "development" && require("../mock/index.js");
 // ReactDOM.render(
 //     <RouterMain></RouterMain>,
 //     document.querySelector('#app')
@@ -43,7 +43,6 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // import HooksIndex from './hooks/index';
 // 自定义FormItem
 // import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
-
 
 // 虚拟滚动
 // import ReactWindowDemo from './others/virtualList/reactWindowDemo'
@@ -82,9 +81,10 @@ process.env.NODE_ENV === 'development' && require('../mock/index.js');
 // 14 antd 源码构建流程
 // import ButtonL from '@components/antd/genneral/ButtonL/index';
 
-
 // 拖拽 drag
 // import SortableList from './features/Drag/SortableList'
 // require('./features/Drag/sortablehoc/basic')
 // import Draghandle from './features/Drag/sortablehoc/drag-handle'
 // require('./features/Drag/sortablehoc/collections')
+
+import semiui from "./components/semiui";
