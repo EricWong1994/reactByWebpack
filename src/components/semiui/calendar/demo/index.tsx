@@ -1,5 +1,6 @@
 import React, { CSSProperties, useEffect } from "react";
-import { Calendar } from "@douyinfe/semi-ui";
+// import { Calendar } from "@douyinfe/semi-ui";
+import Calendar from "../index";
 const allDayStyle = {
   borderRadius: "3px",
   boxSizing: "border-box",
