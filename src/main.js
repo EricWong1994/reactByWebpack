@@ -11,6 +11,10 @@ import App from "./App";
 
 import "antd/dist/antd.less"; // 如果按需加载后，则注释该行
 import "./app.less";
+// import '@douyinfe/semi-ui/_base/base.scss'
+// import './base.scss'
+// import '@douyinfe/semi-ui/lib/es/_base/base.scss'
+// import '@douyinfe/semi-ui/lib/es/_base/base.scss'
 
 // ReactDOM.render(
 //   <App></App>,
