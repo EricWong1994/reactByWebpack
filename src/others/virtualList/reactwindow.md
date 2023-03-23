@@ -311,7 +311,7 @@ outerTagName: string
 **废弃属性.** 用 `outerElementType` 代替
 
 #### overscanCount 缓冲🇨🇳
-
+定义在可见“窗口”外部始终渲染的项目数
 : number = 1
 
 看来overscanCount默认值为2，官方文档写错了
@@ -398,6 +398,11 @@ This component has the same methods as [`FixedSizeList`](https://react-window.ve
   
 
 ### [FixedSizeGrid](https://react-window.vercel.app/#/api/FixedSizeGrid)
+
+同样，根据具体列表项的大小是否会变化，可以使用 `FixedSizeGrid` 和 `VariableSizeGrid` 组件。
+
+- 对于 `FixedSizeGrid`，API 大致相同，但需要为列和行表示高度、宽度和项目数。
+- 对于 `VariableSizeGrid`，可以通过将函数而不是值传递给相应的属性来更改列宽和行高。
 
 ### [VariableSizeGrid](https://react-window.vercel.app/#/api/VariableSizeGrid)
 
@@ -663,4 +668,12 @@ Here are some great components built on top of react-virtualized:
 - [react-virtualized-tree](https://github.com/diogofcunha/react-virtualized-tree/): A reactive tree component that aims to render large sets of tree structured data in an elegant and performant way
 - [react-timeline-9000](https://github.com/BHP-DevHub/react-timeline-9000/): A calendar timeline component that is capable of displaying and interacting with a large number of items
 
-## 
+## 结论 [#](https://web.dev/virtualize-long-lists-react-window/#结论)
+
+如果您不确定从哪里开始虚拟化应用程序中的列表和表格，请按照以下步骤操作：
+
+1. 测量渲染和滚动性能。这篇[文章](https://addyosmani.com/blog/react-window/)展示了如何使用 Chrome DevTools 中的 [FPS meter](https://developer.chrome.com/docs/devtools/evaluate-performance/#analyze_frames_per_second) 来探索列表上的项目的渲染效率。
+2. 对于任何会影响性能的长列表或网格，包含 `react-window`
+3. 如果 `react-window` 不支持某些功能，并且您无法自己添加此功能，请考虑使用 [`react-virtualized`](https://github.com/bvaughn/react-virtualized)。
+4. 如果需要在用户滚动时延迟加载项目，则使用 `react-window-infinite-loader` 包装虚拟化列表。
+5. 使用列表的 `overscanCount` 属性以及网格的 `overscanColumnsCount` 和 `overscanRowsCount` 属性来防止出现闪烁的空白内容。不要过扫描太多条目，因为这会对性能产生负面影响。
