@@ -45,7 +45,8 @@ process.env.NODE_ENV === "development" && require("../mock/index.js");
 // import DiyFormItem from './components/antd/dataDisplay/Form/DiyFormItem'
 
 // 虚拟滚动
-import ReactWindowDemo from "./others/virtualList/reactWindowDemo";
+import VariableExample from "./others/virtualList/components/VariableExample";
+// import ReactWindowDemo from "./others/virtualList/reactWindowDemo";
 // import VirtualTable from './others/virtualList/VirtualTable'
 
 // 表单

@@ -212,9 +212,9 @@ Note that lists may scroll in both directions (depending on CSS) but content wil
 
 
 
-#### 方法
+#### 方法👇🏻
 
-#### onItemsRendered TODO测试
+#### onItemsRendered🇨🇳
 
 : function
 
@@ -238,6 +238,39 @@ function onItemsRendered({
   // All index params are numbers.
 }
 ```
+
+overscanStopIndex 参数代表着在列表中渲染的最后一个元素的索引，它的作用是为了提高滚动性能。当用户滚动列表时，React-window 会根据 overscanStopIndex 预先渲染一些元素，以便在滚动时能够无缝地显示新的元素。这样可以避免滚动时出现闪烁或者卡顿的情况。同时，overscanStopIndex 参数也可以用来优化数据的加载，因为它可以指定哪些元素需要优先加载，从而提高数据加载的效率
+
+如下例子中，第一次打印结果为 0、6、0、4
+
+视图中展示了4条数据，
+
+```jsx
+function onItemsRendered({
+  overscanStartIndex,
+  overscanStopIndex,
+  visibleStartIndex,
+  visibleStopIndex
+}) {
+  console.log(overscanStartIndex, overscanStopIndex, visibleStartIndex, visibleStopIndex)
+  // All index params are numbers.
+}
+
+const Example = () => (
+  <List
+    className="List"
+    height={150}
+    itemCount={1000}
+    itemSize={35}
+    width={300}
+    onItemsRendered={onItemsRendered}
+  >
+    {Row}
+  </List>
+);
+```
+
+
 
 #### onScroll
 
@@ -275,9 +308,25 @@ Tag name passed to `document.createElement` to create the outer container elemen
 
 outerTagName: string
 
-**This property has been deprecated.** Please use the `outerElementType` prop instead.
+**废弃属性.** 用 `outerElementType` 代替
 
-overscanCount: number = 1
+#### overscanCount 缓冲🇨🇳
+
+: number = 1
+
+看来overscanCount默认值为2，官方文档写错了
+
+```
+0 6 0 4 
+```
+
+overscanCount={5}
+
+```
+0 9 0 4
+```
+
+
 
 The number of items (rows or columns) to render outside of the visible area. This property can be important for two reasons:
 
@@ -296,6 +345,16 @@ Optional inline style to attach to outermost `<div>` element.
 
 useIsScrolling: boolean = false
 
+加了该属性后，Row能获取到是否正在滚动
+
+```jsx
+const Row = ({ index, isScrolling, style }) => (
+  <div className={index % 2 ? 'ListItemOdd' : 'ListItemEven'} style={style}>
+    {isScrolling ? 'Scrolling' : `Row ${index}`}
+  </div>
+);
+```
+
 
 
 #### scrollTo
@@ -308,11 +367,35 @@ scrollTo(scrollOffset: number): void
 
 scrollToItem(index: number, align: string = "auto"): void
 
- 
+ 滚动到指定索引
 
 
 
 ### [VariableSizelist](https://react-window.vercel.app/#/api/VariableSizeList)
+
+#### PROPS
+
+This component has the same props as [`FixedSizeList`](https://react-window.vercel.app/#/api/FixedSizeList#props), but with the following additions:
+
+- estimatedItemSize: number = 50
+
+  estimatedItemSize 参数用于指定列表项的平均尺寸。通过设置此参数，React Window 可以更快地计算列表的总高度，从而提高性能。 具体来说，当 React Window 首次渲染列表时，它无法立即知道列表中每个项的确切尺寸，因此需要进行一些估计。如果您知道列表项的平均尺寸，可以使用 estimatedItemSize 参数来提供这些信息，以便 React Window 可以更好地优化列表的渲染。 需要注意的是，estimatedItemSize 参数只是一个估计值，实际的列表项尺寸可能会有所不同。因此，如果您的列表项尺寸差异较大，建议不要设置 estimatedItemSize，而是使用其他优化技术来提高性能。
+
+  （Estimated size of a item in the direction being windowed. For vertical lists, this is the row height. For horizontal lists, this is the column width.This value is used to calculated the estimated total size of a list before its items have all been measured. The total size impacts user scrolling behavior. It is updated whenever new items are measured.）
+
+- itemSize: (index: number) => number 获取每一项尺寸（垂直滚动 ：高度）
+
+  Returns the size of a item in the direction being windowed. For vertical lists, this is the row height. For horizontal lists, this is the column width.`function itemSize(index) {``  return index % 2 ? 50 : 25;``}`
+
+#### METHODS
+
+This component has the same methods as [`FixedSizeList`](https://react-window.vercel.app/#/api/FixedSizeList#methods), but with the following additions:
+
+- resetAfterIndex(index: number, shouldForceUpdate: boolean = true): void
+
+  `VariableSizeList` caches offsets and measurements for each index for performance purposes. This method clears that cached data for all items after (and including) the specified index. It should be called whenever a item's size changes. (Note that this is not a typical occurrance.)By default the list will automatically re-render after the index is reset. If you would like to delay this re-render until e.g. a state update has completed in the parent component, specify a value of`false`for the second, optional parameter.
+
+  
 
 ### [FixedSizeGrid](https://react-window.vercel.app/#/api/FixedSizeGrid)
 
@@ -322,7 +405,7 @@ scrollToItem(index: number, align: string = "auto"): void
 
 ## 示例
 
-### 基础
+### 基础 FixedSizeList
 
 ```jsx
 import React from 'react';
@@ -354,7 +437,36 @@ ReactDOM.render(<Example />, document.getElementById('root'));
 
 
 
+### Variable Size List
 
+前提是知道每个元素的高度，getItemSize函数获取各元素的方法
+
+```jsx
+import { VariableSizeList as List } from 'react-window';
+ 
+// These row heights are arbitrary.
+// Yours should be based on the content of the row.
+const rowHeights = new Array(1000)
+  .fill(true)
+  .map(() => 25 + Math.round(Math.random() * 50));
+ 
+const getItemSize = index => rowHeights[index];
+ 
+const Row = ({ index, style }) => (
+  <div style={style}>Row {index}</div>
+);
+ 
+const Example = () => (
+  <List
+    height={150}
+    itemCount={1000}
+    itemSize={getItemSize}
+    width={300}
+  >
+    {Row}
+  </List>
+);
+```
 
 ### Scrolling Indicators 滚动标识
 
