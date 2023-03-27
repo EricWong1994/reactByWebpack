@@ -391,11 +391,19 @@ This component has the same props as [`FixedSizeList`](https://react-window.verc
 
 This component has the same methods as [`FixedSizeList`](https://react-window.vercel.app/#/api/FixedSizeList#methods), but with the following additions:
 
+##### resetAfterIndex
+
 - resetAfterIndex(index: number, shouldForceUpdate: boolean = true): void
 
   `VariableSizeList` caches offsets and measurements for each index for performance purposes. This method clears that cached data for all items after (and including) the specified index. It should be called whenever a item's size changes. (Note that this is not a typical occurrance.)By default the list will automatically re-render after the index is reset. If you would like to delay this re-render until e.g. a state update has completed in the parent component, specify a value of`false`for the second, optional parameter.
 
-  
+  resetAfterIndex的第一个参数表示从哪个索引开始重新计算VirtualizedList的渲染。如果传入的是0，则表示从列表的开头重新计算渲染。如果传入其它值，则表示从指定索引开始重新计算渲染。如果传入的值小于0或大于列表的长度，则会被忽略，仍然从列表的开头开始重新计算渲染。
+
+[react-window虚拟渲染(不固定高度) - 掘金 (juejin.cn)](https://juejin.cn/post/7120463085856358414)
+
+会遇到列表项样式缓存没有被清除导致行高一直和第一次可视区域里展示的一样。可使用组件的属性resetAfterIndex(index: number, shouldForceUpdate: boolean = true): void来清除样式。
+
+
 
 ### [FixedSizeGrid](https://react-window.vercel.app/#/api/FixedSizeGrid)
 
@@ -643,6 +651,32 @@ ReactDOM.render(<ExampleWrapper />, document.getElementById('root'));
 
 
 [国际化 - 通用 LTR/RTL 布局解决方案 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/47864242)
+
+## 源码
+
+TODO
+
+https://codesandbox.io/s/react-windowmo-ni-shi-xian-vxs84o?file=/src/index.js
+
+我们使用官方库效果如下：
+
+![img](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a7bd86685c624f279cd5608c278667c5~tplv-k3u1fbpfcp-zoom-in-crop-mark:4536:0:0:0.awebp)
+
+> 我们可以看到可视区内展示 `4` 项，但是 `dom` 结构中展示了 `6` 项，这是因为列表在上下滑动的时候做了一个缓冲，避免滚动的时候有个白屏的效果，类似缓存。
+
+> 那这里元素的定位为什么使用定位形式又使用 `will-change` 呢？这是使用了 `will-change`，让浏览器就可以提前知道哪些元素的属性将会改变，把元素提升到一个新层，提升性能，同时避免了重排重绘。
+
+[will-change - CSS：层叠样式表 | MDN (mozilla.org)](https://developer.mozilla.org/zh-CN/docs/Web/CSS/will-change)
+
+[CSS will-change 属性 - yuzhongwusan - 博客园 (cnblogs.com)](https://www.cnblogs.com/yuzhongwusan/p/4186405.html)
+
+作者：测不准 链接：https://juejin.cn/post/7146978530889302047
+
+### 神马翔-知乎
+
+react-window 是如何实现虚拟列表的 - 神马翔的文章 - 知乎 https://zhuanlan.zhihu.com/p/435198694
+
+
 
 ## 参考
 
